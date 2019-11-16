@@ -5,15 +5,14 @@
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 177.507 ],
-"_edit_vertical_guides_": [ -929.861 ]
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
 }
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
 
 [node name="Misako" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2.03845, 186.739 )
-speed = 200
+position = Vector2( 3.26623, 186.739 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
