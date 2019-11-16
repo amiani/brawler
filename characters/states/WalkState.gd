@@ -1,27 +1,17 @@
 extends CharacterState
 class_name WalkState
 
-func handleInput(character, event)->CharacterState:
-  if event.is_action_pressed('right'):
-    character.direction.x += 1
-  elif event.is_action_released('right'):
-    character.direction.x -= 1
-  elif event.is_action_pressed('left'):
-    character.direction.x -= 1
-  elif event.is_action_released('left'):
-    character.direction.x += 1
-  elif event.is_action_pressed('up'):
-    character.direction.y -= 1
-  elif event.is_action_released('up'):
-    character.direction.y += 1
-  elif event.is_action_pressed('down'):
-    character.direction.y += 1
-  elif event.is_action_released('down'):
-    character.direction.y -= 1
-  return null
-
 func enter(character):
-  pass
+  character.sprite.animation = 'walk'
 
-func update(character, delta) -> void:
-  pass
+func update(character, delta, inputs) -> CharacterState:
+  match inputs.pop_front():
+    'RIGHT_PRESSED', 'LEFT_RELEASED':
+      character.direction.x += 1
+    'LEFT_PRESSED', 'RIGHT_RELEASED':
+      character.direction.x -= 1
+    'UP_PRESSED', 'DOWN_RELEASED':
+      character.direction.y -= 1
+    'DOWN_PRESSED', 'UP_RELEASED':
+      character.direction.y += 1
+  return null

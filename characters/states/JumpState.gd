@@ -1,11 +1,8 @@
 extends CharacterState
 class_name JumpState
 
-func handleInput(event)->CharacterState:
-  pass
-
 func enter(character:Character):
   pass
 
-func update(character, delta)->void:
+func update(character, delta, inputs)->void:
   pass
