@@ -75,7 +75,9 @@ func integrate(delta):
   z_index = roomPosition.y
 
 
+export var hitPlaneTolerance = 30
 func handleHurtboxEntered(area:Area2D):
-  print()
-  if area.is_in_group('hitboxes'):
+  var yDistance = abs(area.get_parent().roomPosition.y - roomPosition.y)
+  print(yDistance)
+  if area.is_in_group('hitboxes') && yDistance < hitPlaneTolerance:
     state.handleHit(self, area)
