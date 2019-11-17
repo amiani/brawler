@@ -45,6 +45,7 @@ func _physics_process(delta):
 
   var nextState = state.update(self, delta)
   if nextState != null:
+    state.exit(self)
     state = nextState
     state.enter(self)
 
@@ -71,3 +72,10 @@ func integrate(delta):
     (roomPosition.x - position.x) / delta,
     (roomPosition.y - position.y - roomPosition.z) / delta)
   move_and_slide(clampedVelocity)
+  z_index = roomPosition.y
+
+
+func handleHurtboxEntered(area:Area2D):
+  print()
+  if area.is_in_group('hitboxes'):
+    state.handleHit(self, area)

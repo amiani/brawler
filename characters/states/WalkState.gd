@@ -2,7 +2,7 @@ extends GroundState
 class_name WalkState
 
 func enter(character):
-  character.sprite.animation = 'walk'
+  character.animation.play('walk')
 
 var direction = Vector2()
 func update(character, delta) -> CharacterState:

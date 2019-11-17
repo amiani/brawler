@@ -6,12 +6,13 @@
 resource_name = "idle"
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24.1789, 62.8825 )
+extents = Vector2( 41.5217, 90.7021 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23.4328, 12.4689 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32.8177, 91.0829 )
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -22,21 +23,26 @@ position = Vector2( 0, -92 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PushBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -92 )
 shape = SubResource( 2 )
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." groups=[
+"hitboxes",
+]]
 modulate = Color( 0.615686, 0.141176, 0.827451, 1 )
 position = Vector2( 46.5349, -32.0604 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource( 3 )
+disabled = true
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HurtBox" type="Area2D" parent="."]
+[node name="HurtBox" type="Area2D" parent="." groups=[
+"hurtboxes",
+]]
 modulate = Color( 0.968627, 1, 0, 1 )
 position = Vector2( -28.5432, -26.5141 )
 
@@ -45,3 +51,10 @@ shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AudioStreams" type="Node" parent="."]
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="AudioStreams"]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="AudioStreams"]
+[connection signal="area_entered" from="HurtBox" to="." method="handleHurtboxEntered"]
