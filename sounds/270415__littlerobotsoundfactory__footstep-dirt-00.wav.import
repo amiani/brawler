@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270415__littlerobotsoundfactory__footstep-dirt-00.wav-c2244ef8e742589125c8aa539cba3b51.sample"
+
+[deps]
+
+source_file="res://sounds/270415__littlerobotsoundfactory__footstep-dirt-00.wav"
+dest_files=[ "res://.import/270415__littlerobotsoundfactory__footstep-dirt-00.wav-c2244ef8e742589125c8aa539cba3b51.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

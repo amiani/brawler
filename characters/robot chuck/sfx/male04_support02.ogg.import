@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/male04_support02.ogg-9f47e389ae2de25b4c40dd24df1a6248.oggstr"
+
+[deps]
+
+source_file="res://characters/robot chuck/sfx/male04_support02.ogg"
+dest_files=[ "res://.import/male04_support02.ogg-9f47e389ae2de25b4c40dd24df1a6248.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

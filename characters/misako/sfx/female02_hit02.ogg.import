@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/female02_hit02.ogg-18c3621f34b27cd839ab0efcd9b2f0dc.oggstr"
+
+[deps]
+
+source_file="res://characters/misako/sfx/female02_hit02.ogg"
+dest_files=[ "res://.import/female02_hit02.ogg-18c3621f34b27cd839ab0efcd9b2f0dc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
