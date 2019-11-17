@@ -21,6 +21,8 @@ func update(character, delta) -> CharacterState:
   else:
     direction.y = 0
 
+  if input.attack.just_pressed:
+    return character.states.jab.new()
   if input.jump.just_pressed:
     return character.states.jump.new()
 
