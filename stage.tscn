@@ -23,7 +23,7 @@ current = true
 [node name="Robot Chuck" parent="." instance=ExtResource( 3 )]
 position = Vector2( 289.197, 186.15 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -16.488
+volume_db = -27.155
 autoplay = true
