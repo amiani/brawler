@@ -1,5 +1,5 @@
 extends ActorState
-class_name GroundState
+class_name PlayerGroundState
 
 func update(controller, delta)->ActorState:
   var i = controller.inputs[0]

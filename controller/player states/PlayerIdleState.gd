@@ -1,5 +1,5 @@
 extends GroundState
-class_name IdleState
+class_name PlayerIdleState
 
 func enter(controller)->void:
   controller.actor.animation.play('idle')

@@ -1,5 +1,5 @@
 extends GroundState
-class_name JabState
+class_name PlayerJabState
 
 func enter(controller)->void:
   controller.actor.velocity = Vector3()

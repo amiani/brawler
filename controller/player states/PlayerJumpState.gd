@@ -1,5 +1,5 @@
 extends ActorState
-class_name JumpState
+class_name PlayerJumpState
 
 func enter(controller):
   controller.actor.sprite.animation = 'jump'

@@ -1,8 +1,11 @@
 extends GroundState
-class_name WalkState
+class_name PlayerWalkState
 
 func enter(controller):
   controller.actor.animation.play('walk')
+
+func exit(controller):
+  controller.actor.animation.stop()
 
 var direction = Vector2()
 func update(controller, delta) -> ActorState:
