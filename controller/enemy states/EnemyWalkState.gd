@@ -4,6 +4,12 @@ class_name EnemyWalkState
 var resolution = 16
 var behaviours = [ChaseBehaviour.new()]
 
+func enter(controller):
+  controller.actor.animation.play('walk')
+
+func exit(controller):
+  controller.actor.animation.stop()
+
 func update(controller, delta)->ActorState:
   var interest = []
   var danger = []
