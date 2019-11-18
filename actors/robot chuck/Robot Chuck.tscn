@@ -88,7 +88,7 @@ walkSpeed = 200
 position = Vector2( -0.487686, -96.9966 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "walk"
+animation = "hit"
 frame = 4
 playing = true
 
@@ -102,6 +102,5 @@ shape = SubResource( 3 )
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )
 
-[node name="EnemyController" type="Node" parent="." index="4"]
+[node name="StateController" parent="." index="4"]
 script = ExtResource( 4 )
-actorPath = NodePath("..")

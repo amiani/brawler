@@ -16,6 +16,6 @@ func updateState(delta):
     state.enter(self)
 
 func handleHurtboxEntered(area:Area2D):
-  var yDistance = abs(area.get_parent().roomPosition.y - actor.roomPosition.y)
+  var yDistance = abs(area.get_parent().get_parent().roomPosition.y - actor.roomPosition.y)
   if area.is_in_group('hitboxes') && yDistance < actor.hitPlaneTolerance:
     state.handleHit(self, area)

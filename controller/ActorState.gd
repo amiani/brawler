@@ -10,5 +10,5 @@ func exit(controller)->void:
 func update(controller, delta)->ActorState:
   return null
 
-func handleHit(actor, hitbox:Area2D):
-  actor.animation.play('hit')
+func handleHit(controller, hitbox:Area2D):
+  controller.actor.animation.play('hit')

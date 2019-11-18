@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/Actor.gd" type="Script" id=1]
+[ext_resource path="res://controller/StateController.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 23.4328, 12.4689 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.41561, 4.48969 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14.9272, 28.8609 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 length = 1.33333
 step = 0.0833333
 tracks/0/type = "value"
@@ -50,7 +50,7 @@ modulate = Color( 0.615686, 0.141176, 0.827451, 1 )
 position = Vector2( 121.272, 23.0974 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/HitBox"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 disabled = true
 __meta__ = {
 "_edit_lock_": true
@@ -62,13 +62,13 @@ __meta__ = {
 modulate = Color( 0.968627, 1, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/HurtBox"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 1 )
+anims/idle = SubResource( 3 )
 
 [node name="PushBox" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -78,4 +78,8 @@ rotation = 1.5708
 [node name="Voice" type="AudioStreamPlayer2D" parent="AudioStreams"]
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="AudioStreams"]
-[connection signal="area_entered" from="AnimatedSprite/HurtBox" to="." method="handleHurtboxEntered"]
+
+[node name="StateController" type="Node" parent="."]
+script = ExtResource( 2 )
+actorPath = NodePath("..")
+[connection signal="area_entered" from="AnimatedSprite/HurtBox" to="StateController" method="handleHurtboxEntered"]

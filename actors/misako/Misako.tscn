@@ -77,20 +77,20 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
+"name": "jab",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 42 ), ExtResource( 66 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 41 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 44 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 62 ) ],
 "loop": false,
 "name": "battlestart",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "jab",
-"speed": 12.0
+"name": "jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 38 ) ],
 "loop": true,
@@ -128,43 +128,43 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0, 5 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("HitBox:position")
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreams/Voice")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 64, -122 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("HitBox/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.166667, 0.333333 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-tracks/4/type = "audio"
-tracks/4/path = NodePath("AudioStreams/Voice")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 3 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite/HitBox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22.4759, -9.75273 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite/HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.166667, 0.333333 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -228,7 +228,11 @@ script = ExtResource( 69 )
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "jab"
+frame = 5
+
+[node name="HitBox" parent="AnimatedSprite" index="0"]
+position = Vector2( 22.4759, -9.75273 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/hit = SubResource( 2 )
@@ -245,6 +249,5 @@ stream = ExtResource( 3 )
 [node name="SFX" parent="AudioStreams" index="1"]
 stream = ExtResource( 68 )
 
-[node name="PlayerController" type="Node" parent="." index="4"]
+[node name="StateController" parent="." index="4"]
 script = ExtResource( 25 )
-actorPath = NodePath("..")

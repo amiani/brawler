@@ -18,7 +18,6 @@
 [ext_resource path="res://actors/robot chuck/sheet.sprites/hit/1.tres" type="Texture" id=16]
 [ext_resource path="res://actors/robot chuck/sheet.sprites/hit/4.tres" type="Texture" id=17]
 
-
 [resource]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 6 ) ],
@@ -32,7 +31,7 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 17 ) ],
-"loop": true,
+"loop": false,
 "name": "hit",
 "speed": 7.0
 } ]
