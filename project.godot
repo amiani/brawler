@@ -17,32 +17,22 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "ActorState",
 "language": "GDScript",
-"path": "res://controller/states/ActorState.gd"
+"path": "res://controller/ActorState.gd"
 }, {
 "base": "Node",
 "class": "Controller",
 "language": "GDScript",
 "path": "res://controller/Controller.gd"
 }, {
-"base": "ActorState",
-"class": "GroundState",
+"base": "Controller",
+"class": "EnemyController",
 "language": "GDScript",
-"path": "res://controller/states/PlayerGroundState.gd"
-}, {
-"base": "GroundState",
-"class": "IdleState",
-"language": "GDScript",
-"path": "res://controller/states/PlayerIdleState.gd"
-}, {
-"base": "GroundState",
-"class": "JabState",
-"language": "GDScript",
-"path": "res://controller/states/PlayerJabState.gd"
+"path": "res://controller/EnemyController.gd"
 }, {
 "base": "ActorState",
-"class": "JumpState",
+"class": "EnemyIdleState",
 "language": "GDScript",
-"path": "res://controller/states/PlayerJumpState.gd"
+"path": "res://controller/enemy states/EnemyIdleState.gd"
 }, {
 "base": "Actor",
 "class": "Misako",
@@ -54,22 +44,44 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://controller/PlayerController.gd"
 }, {
-"base": "GroundState",
-"class": "WalkState",
+"base": "ActorState",
+"class": "PlayerGroundState",
 "language": "GDScript",
-"path": "res://controller/states/PlayerWalkState.gd"
+"path": "res://controller/player states/PlayerGroundState.gd"
+}, {
+"base": "GroundState",
+"class": "PlayerIdleState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerIdleState.gd"
+}, {
+"base": "GroundState",
+"class": "PlayerJabState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerJabState.gd"
+}, {
+"base": "ActorState",
+"class": "PlayerJumpState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerJumpState.gd"
+}, {
+"base": "GroundState",
+"class": "PlayerWalkState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerWalkState.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "ActorState": "",
 "Controller": "",
-"GroundState": "",
-"IdleState": "",
-"JabState": "",
-"JumpState": "",
+"EnemyController": "",
+"EnemyIdleState": "",
 "Misako": "",
 "PlayerController": "",
-"WalkState": ""
+"PlayerGroundState": "",
+"PlayerIdleState": "",
+"PlayerJabState": "",
+"PlayerJumpState": "",
+"PlayerWalkState": ""
 }
 
 [application]
