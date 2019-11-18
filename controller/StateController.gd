@@ -1,5 +1,5 @@
 extends Node
-class_name Controller
+class_name StateController
 
 var state : ActorState
 export(NodePath) var actorPath

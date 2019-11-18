@@ -1,4 +1,4 @@
-extends GroundState
+extends PlayerGroundState
 class_name PlayerWalkState
 
 func enter(controller):

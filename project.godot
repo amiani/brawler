@@ -19,27 +19,42 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://controller/ActorState.gd"
 }, {
-"base": "Node",
-"class": "Controller",
+"base": "SteeringBehaviour",
+"class": "ChaseBehaviour",
 "language": "GDScript",
-"path": "res://controller/Controller.gd"
+"path": "res://controller/steering behaviour/ChaseBehaviour.gd"
 }, {
-"base": "Controller",
+"base": "StateController",
 "class": "EnemyController",
 "language": "GDScript",
 "path": "res://controller/EnemyController.gd"
 }, {
 "base": "ActorState",
+"class": "EnemyGroundState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyGroundState.gd"
+}, {
+"base": "EnemyGroundState",
 "class": "EnemyIdleState",
 "language": "GDScript",
 "path": "res://controller/enemy states/EnemyIdleState.gd"
+}, {
+"base": "ActorState",
+"class": "EnemyJabState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyJabState.gd"
+}, {
+"base": "ActorState",
+"class": "EnemyWalkState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyWalkState.gd"
 }, {
 "base": "Actor",
 "class": "Misako",
 "language": "GDScript",
 "path": "res://actors/misako/Misako.gd"
 }, {
-"base": "Controller",
+"base": "StateController",
 "class": "PlayerController",
 "language": "GDScript",
 "path": "res://controller/PlayerController.gd"
@@ -49,12 +64,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://controller/player states/PlayerGroundState.gd"
 }, {
-"base": "GroundState",
+"base": "PlayerGroundState",
 "class": "PlayerIdleState",
 "language": "GDScript",
 "path": "res://controller/player states/PlayerIdleState.gd"
 }, {
-"base": "GroundState",
+"base": "PlayerGroundState",
 "class": "PlayerJabState",
 "language": "GDScript",
 "path": "res://controller/player states/PlayerJabState.gd"
@@ -64,24 +79,45 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://controller/player states/PlayerJumpState.gd"
 }, {
-"base": "GroundState",
+"base": "PlayerGroundState",
 "class": "PlayerWalkState",
 "language": "GDScript",
 "path": "res://controller/player states/PlayerWalkState.gd"
+}, {
+"base": "Node",
+"class": "StateController",
+"language": "GDScript",
+"path": "res://controller/StateController.gd"
+}, {
+"base": "Reference",
+"class": "Steerer",
+"language": "GDScript",
+"path": "res://controller/steering behaviour/Steerer.gd"
+}, {
+"base": "Node",
+"class": "SteeringBehaviour",
+"language": "GDScript",
+"path": "res://controller/steering behaviour/SteeringBehaviour.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "ActorState": "",
-"Controller": "",
+"ChaseBehaviour": "",
 "EnemyController": "",
+"EnemyGroundState": "",
 "EnemyIdleState": "",
+"EnemyJabState": "",
+"EnemyWalkState": "",
 "Misako": "",
 "PlayerController": "",
 "PlayerGroundState": "",
 "PlayerIdleState": "",
 "PlayerJabState": "",
 "PlayerJumpState": "",
-"PlayerWalkState": ""
+"PlayerWalkState": "",
+"StateController": "",
+"Steerer": "",
+"SteeringBehaviour": ""
 }
 
 [application]

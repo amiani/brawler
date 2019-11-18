@@ -1,17 +1,17 @@
-extends Controller
+extends StateController
 class_name PlayerController
 
 var states = {
-  'walk': WalkState,
-  'idle': IdleState,
-  'jump': JumpState,
-  'jab': JabState,
-  'ground': GroundState,
+  'walk': PlayerWalkState,
+  'idle': PlayerIdleState,
+  'jump': PlayerJumpState,
+  'jab': PlayerJabState,
+  'ground': PlayerGroundState,
 }
 
 func _ready() -> void:
   ._ready()
-  state = IdleState.new()
+  state = PlayerIdleState.new()
   actor.connect('ready', self, 'handleActorReady')
 
 func handleActorReady():

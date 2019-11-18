@@ -1,0 +1,2 @@
+extends ActorState
+class_name EnemyJabState

@@ -1,13 +1,13 @@
 extends Reference
 class_name ActorState
 
-func enter(actor)->void:
+func enter(controller)->void:
   pass
 
-func exit(actor)->void:
+func exit(controller)->void:
   pass
 
-func update(actor, delta)->ActorState:
+func update(controller, delta)->ActorState:
   return null
 
 func handleHit(actor, hitbox:Area2D):

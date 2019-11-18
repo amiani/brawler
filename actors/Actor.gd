@@ -13,6 +13,7 @@ onready var animation = find_node('AnimationPlayer')
 onready var hurtbox = find_node('HurtBox')
 
 func _ready():
+  add_to_group('actors')
   sprite = find_node('AnimatedSprite', false, false)
   halfScreenSize = get_viewport_rect().size / 2
   roomPosition = Vector3(position.x, position.y, 0)

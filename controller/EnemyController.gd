@@ -1,5 +1,14 @@
-extends Controller
+extends StateController
 class_name EnemyController
+
+const states = {
+  'idle': EnemyIdleState,
+  'walk': EnemyWalkState,
+  'jab': EnemyJabState,
+}
+
+const interest = []
+const danger = []
 
 func _ready():
   ._ready()

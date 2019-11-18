@@ -1,7 +1,7 @@
 extends ActorState
 class_name PlayerGroundState
 
-func update(controller, delta)->ActorState:
+func update(controller:StateController, delta)->ActorState:
   var i = controller.inputs[0]
   if i.attack.just_pressed:
     return controller.states.jab.new()
