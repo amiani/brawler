@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://rooms/Room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters/misako/Misako.tscn" type="PackedScene" id=2]
-[ext_resource path="res://characters/robot chuck/Robot Chuck.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/misako/Misako.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/robot chuck/Robot Chuck.tscn" type="PackedScene" id=3]
 [ext_resource path="res://music/Ludum Dare 28 - Track 2.ogg" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]

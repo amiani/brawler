@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/male04_death.ogg-750fd22edc214a84cfc018ab97a8cfd7.oggstr"
+
+[deps]
+
+source_file="res://actors/robot chuck/sfx/male04_death.ogg"
+dest_files=[ "res://.import/male04_death.ogg-750fd22edc214a84cfc018ab97a8cfd7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

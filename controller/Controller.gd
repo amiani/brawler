@@ -2,11 +2,11 @@ extends Node
 class_name Controller
 
 var state : CharacterState
-export(NodePath) var characterPath
-var character
+export(NodePath) var actorPath
+var actor
 func _ready() -> void:
-  character = get_node(characterPath)
-  character.find_node('HurtBox').connect('area_entered', self, 'handleHurtBoxEntered')
+  actor = get_node(actorPath)
+  actor.find_node('HurtBox').connect('area_entered', self, 'handleHurtBoxEntered')
 
 func updateState(delta):
   var nextState = state.update(self, delta)
@@ -16,6 +16,6 @@ func updateState(delta):
     state.enter(self)
 
 func handleHurtboxEntered(area:Area2D):
-  var yDistance = abs(area.get_parent().roomPosition.y - character.roomPosition.y)
-  if area.is_in_group('hitboxes') && yDistance < character.hitPlaneTolerance:
+  var yDistance = abs(area.get_parent().roomPosition.y - actor.roomPosition.y)
+  if area.is_in_group('hitboxes') && yDistance < actor.hitPlaneTolerance:
     state.handleHit(self, area)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/female02_attacklarge.ogg-28f32e10ffca84b65d64454f3fc830fa.oggstr"
+
+[deps]
+
+source_file="res://actors/misako/sfx/female02_attacklarge.ogg"
+dest_files=[ "res://.import/female02_attacklarge.ogg-28f32e10ffca84b65d64454f3fc830fa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

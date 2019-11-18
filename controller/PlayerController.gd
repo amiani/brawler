@@ -12,7 +12,7 @@ var states = {
 func _ready() -> void:
   ._ready()
   state = IdleState.new()
-  character.connect('ready', self, 'handleCharacterReady')
+  actor.connect('ready', self, 'handleCharacterReady')
 
 func handleCharacterReady():
   state.enter(self)
