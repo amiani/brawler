@@ -82,15 +82,15 @@ animations = [ {
 "name": "jab",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 42 ), ExtResource( 66 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 41 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 44 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 62 ) ],
-"loop": false,
-"name": "battlestart",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 42 ), ExtResource( 66 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 41 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 44 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "battlestart",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 38 ) ],
 "loop": true,
@@ -222,14 +222,15 @@ tracks/2/keys = {
 radius = 25.0
 height = 71.8662
 
-[node name="Misako" instance=ExtResource( 1 )]
+[node name="Misako" groups=[
+"players",
+] instance=ExtResource( 1 )]
 script = ExtResource( 69 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "jab"
-frame = 5
 
 [node name="HitBox" parent="AnimatedSprite" index="0"]
 position = Vector2( 22.4759, -9.75273 )

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=2]
+[gd_resource type="SpriteFrames" load_steps=22 format=2]
 
 [ext_resource path="res://actors/robot chuck/sheet.sprites/walk/5.tres" type="Texture" id=1]
 [ext_resource path="res://actors/robot chuck/sheet.sprites/walk/6.tres" type="Texture" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://actors/robot chuck/sheet.sprites/hit/2.tres" type="Texture" id=15]
 [ext_resource path="res://actors/robot chuck/sheet.sprites/hit/1.tres" type="Texture" id=16]
 [ext_resource path="res://actors/robot chuck/sheet.sprites/hit/4.tres" type="Texture" id=17]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/1.tres" type="Texture" id=18]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/0.tres" type="Texture" id=19]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/3.tres" type="Texture" id=20]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/2.tres" type="Texture" id=21]
 
 [resource]
 animations = [ {
@@ -24,6 +28,11 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "jab",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
