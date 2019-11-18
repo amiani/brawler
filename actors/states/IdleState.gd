@@ -2,5 +2,5 @@ extends GroundState
 class_name IdleState
 
 func enter(controller)->void:
-  controller.character.animation.play('idle')
-  controller.character.velocity = Vector3()
+  controller.actor.animation.play('idle')
+  controller.actor.velocity = Vector3()

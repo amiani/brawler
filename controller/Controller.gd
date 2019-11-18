@@ -1,7 +1,7 @@
 extends Node
 class_name Controller
 
-var state : CharacterState
+var state : ActorState
 export(NodePath) var actorPath
 var actor
 func _ready() -> void:

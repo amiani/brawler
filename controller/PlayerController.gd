@@ -12,9 +12,9 @@ var states = {
 func _ready() -> void:
   ._ready()
   state = IdleState.new()
-  actor.connect('ready', self, 'handleCharacterReady')
+  actor.connect('ready', self, 'handleActorReady')
 
-func handleCharacterReady():
+func handleActorReady():
   state.enter(self)
 
 const inputs = []

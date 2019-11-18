@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Character
+class_name Actor
 
 var halfScreenSize : Vector2
 export var walkSpeed = 300

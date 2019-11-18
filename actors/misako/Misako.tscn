@@ -1,6 +1,6 @@
 [gd_scene load_steps=74 format=2]
 
-[ext_resource path="res://actors/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0000_anio.tres" type="Texture" id=2]
 [ext_resource path="res://actors/misako/sfx/female02_attack02.ogg" type="AudioStream" id=3]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0008_anio.tres" type="Texture" id=4]
@@ -76,10 +76,10 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 38 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "walk",
-"speed": 12.0
+"name": "jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 42 ), ExtResource( 66 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 41 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 44 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 62 ) ],
 "loop": false,
@@ -91,10 +91,10 @@ animations = [ {
 "name": "jab",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 38 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
+"name": "walk",
+"speed": 12.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -250,4 +250,4 @@ stream = ExtResource( 68 )
 
 [node name="PlayerController" type="Node" parent="." index="6"]
 script = ExtResource( 25 )
-characterPath = NodePath("..")
+actorPath = NodePath("..")

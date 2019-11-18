@@ -1,7 +1,7 @@
-extends CharacterState
+extends ActorState
 class_name GroundState
 
-func update(controller, delta)->CharacterState:
+func update(controller, delta)->ActorState:
   var i = controller.inputs[0]
   if i.attack.just_pressed:
     return controller.states.jab.new()

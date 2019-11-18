@@ -10,21 +10,21 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Character",
+"class": "Actor",
 "language": "GDScript",
-"path": "res://actors/Character.gd"
+"path": "res://actors/Actor.gd"
 }, {
 "base": "Reference",
-"class": "CharacterState",
+"class": "ActorState",
 "language": "GDScript",
-"path": "res://actors/states/CharacterState.gd"
+"path": "res://actors/states/ActorState.gd"
 }, {
 "base": "Node",
 "class": "Controller",
 "language": "GDScript",
 "path": "res://controller/Controller.gd"
 }, {
-"base": "CharacterState",
+"base": "ActorState",
 "class": "GroundState",
 "language": "GDScript",
 "path": "res://actors/states/GroundState.gd"
@@ -39,12 +39,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actors/states/JabState.gd"
 }, {
-"base": "CharacterState",
+"base": "ActorState",
 "class": "JumpState",
 "language": "GDScript",
 "path": "res://actors/states/JumpState.gd"
 }, {
-"base": "Character",
+"base": "Actor",
 "class": "Misako",
 "language": "GDScript",
 "path": "res://actors/misako/Misako.gd"
@@ -60,8 +60,8 @@ _global_script_classes=[ {
 "path": "res://actors/states/WalkState.gd"
 } ]
 _global_script_class_icons={
-"Character": "",
-"CharacterState": "",
+"Actor": "",
+"ActorState": "",
 "Controller": "",
 "GroundState": "",
 "IdleState": "",
