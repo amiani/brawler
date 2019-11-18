@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/states/CharacterState.gd"
 }, {
+"base": "Node",
+"class": "Controller",
+"language": "GDScript",
+"path": "res://characters/Controller.gd"
+}, {
 "base": "CharacterState",
 "class": "GroundState",
 "language": "GDScript",
@@ -44,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/misako/Misako.gd"
 }, {
+"base": "Controller",
+"class": "PlayerController",
+"language": "GDScript",
+"path": "res://characters/misako/PlayerController.gd"
+}, {
 "base": "GroundState",
 "class": "WalkState",
 "language": "GDScript",
@@ -52,11 +62,13 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Character": "",
 "CharacterState": "",
+"Controller": "",
 "GroundState": "",
 "IdleState": "",
 "JabState": "",
 "JumpState": "",
 "Misako": "",
+"PlayerController": "",
 "WalkState": ""
 }
 

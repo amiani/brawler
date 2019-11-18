@@ -1,54 +1,23 @@
 extends KinematicBody2D
 class_name Character
 
-var states = {
-  'walk': WalkState,
-  'idle': IdleState,
-  'jump': JumpState,
-  'jab': JabState,
-  'ground': GroundState,
-}
-
 var halfScreenSize : Vector2
-var state : CharacterState
 export var walkSpeed = 300
 var roomPosition : Vector3
 var velocity = Vector3()
 export var gravity = -100
-export var friction = 10
-export var airResistance = 1
 var direction : Vector2
-var sprite : AnimatedSprite
-var animation : AnimationPlayer
+export var hitPlaneTolerance = 30
+onready var sprite = find_node('AnimatedSprite')
+onready var animation = find_node('AnimationPlayer')
+onready var hurtbox = find_node('HurtBox')
 
 func _ready():
+  sprite = find_node('AnimatedSprite', false, false)
   halfScreenSize = get_viewport_rect().size / 2
   roomPosition = Vector3(position.x, position.y, 0)
-  sprite = get_child(0)
-  animation = get_child(1)
-  state = IdleState.new()
-  state.enter(self)
 
-const inputs = []
-const INPUTBUFFERLENGTH = 10
-const ACTIONS = ['right', 'left', 'up', 'down', 'jump', 'attack']
 func _physics_process(delta):
-  var input = {}
-  for a in ACTIONS:
-    input[a] = {}
-    input[a].just_pressed = Input.is_action_just_pressed(a)
-    input[a].just_released = Input.is_action_just_released(a)
-    input[a].pressed = Input.is_action_pressed(a)
-  inputs.push_front(input)
-  while inputs.size() > INPUTBUFFERLENGTH:
-    inputs.pop_back()
-
-  var nextState = state.update(self, delta)
-  if nextState != null:
-    state.exit(self)
-    state = nextState
-    state.enter(self)
-
   integrate(delta)
 
   if sprite.flip_h && velocity.x > 0:
@@ -73,10 +42,3 @@ func integrate(delta):
     (roomPosition.y - position.y - roomPosition.z) / delta)
   move_and_slide(clampedVelocity)
   z_index = roomPosition.y
-
-
-export var hitPlaneTolerance = 30
-func handleHurtboxEntered(area:Area2D):
-  var yDistance = abs(area.get_parent().roomPosition.y - roomPosition.y)
-  if area.is_in_group('hitboxes') && yDistance < hitPlaneTolerance:
-    state.handleHit(self, area)

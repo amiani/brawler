@@ -1,12 +1,12 @@
 extends CharacterState
 class_name JumpState
 
-func enter(character):
-  character.sprite.animation = 'jump'
-  character.velocity.z = 400
-  character.velocity.y = 0
-  character.roomPosition.z = .1
+func enter(controller):
+  controller.character.sprite.animation = 'jump'
+  controller.character.velocity.z = 400
+  controller.character.velocity.y = 0
+  controller.character.roomPosition.z = .1
 
-func update(character, delta):
-  if character.roomPosition.z == 0:
-    return character.states.ground.new()
+func update(controller, delta):
+  if controller.character.roomPosition.z == 0:
+    return controller.states.ground.new()

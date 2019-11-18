@@ -1,12 +1,12 @@
 extends GroundState
 class_name WalkState
 
-func enter(character):
-  character.animation.play('walk')
+func enter(controller):
+  controller.character.animation.play('walk')
 
 var direction = Vector2()
-func update(character, delta) -> CharacterState:
-  var input = character.inputs[0]
+func update(controller, delta) -> CharacterState:
+  var input = controller.inputs[0]
   if input.right.pressed:
     direction.x = 1
   elif input.left.pressed:
@@ -22,13 +22,13 @@ func update(character, delta) -> CharacterState:
     direction.y = 0
 
   if input.attack.just_pressed:
-    return character.states.jab.new()
+    return controller.states.jab.new()
   if input.jump.just_pressed:
-    return character.states.jump.new()
+    return controller.states.jump.new()
 
-  var groundVelocity = direction.normalized() * character.walkSpeed
-  character.velocity.x = groundVelocity.x
-  character.velocity.y = groundVelocity.y
+  var groundVelocity = direction.normalized() * controller.character.walkSpeed
+  controller.character.velocity.x = groundVelocity.x
+  controller.character.velocity.y = groundVelocity.y
   if direction.x == 0 && direction.y == 0:
-    return character.states.idle.new()
+    return controller.states.idle.new()
   return null

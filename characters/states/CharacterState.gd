@@ -1,14 +1,14 @@
 extends Reference
 class_name CharacterState
 
-func enter(character)->void:
+func enter(controller)->void:
   pass
 
-func exit(character)->void:
+func exit(controller)->void:
   pass
 
-func update(character, delta)->CharacterState:
+func update(controller, delta)->CharacterState:
   return null
 
-func handleHit(character, hitbox:Area2D):
-  character.animation.play('hit')
+func handleHit(controller, hitbox:Area2D):
+  controller.character.animation.play('hit')
