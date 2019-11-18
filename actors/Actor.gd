@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 func integrate(delta):
   roomPosition.x = position.x
-  roomPosition.y = position.y + roomPosition.z
+  roomPosition.y = position.y
   if roomPosition.z > 0:
     velocity.z += gravity
   else:
@@ -40,6 +40,7 @@ func integrate(delta):
   roomPosition.z = clamp(roomPosition.z, 0, 100)
   var clampedVelocity = Vector2(
     (roomPosition.x - position.x) / delta,
-    (roomPosition.y - position.y - roomPosition.z) / delta)
+    (roomPosition.y - position.y) / delta)
+  sprite.position.y = -roomPosition.z
   move_and_slide(clampedVelocity)
   z_index = roomPosition.y

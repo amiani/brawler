@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0000_anio.tres" type="Texture" id=2]
@@ -218,14 +218,17 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.0858127, 0.500165 )
 }
 
-[node name="Misako" index="0" instance=ExtResource( 1 )]
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 25.0
+height = 71.8662
+
+[node name="Misako" instance=ExtResource( 1 )]
 script = ExtResource( 69 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
-animation = "walk"
-frame = 3
+animation = "idle"
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/hit = SubResource( 2 )
@@ -234,15 +237,7 @@ anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
 [node name="PushBox" parent="." index="2"]
-visible = false
-
-[node name="HitBox" parent="." index="3"]
-visible = false
-position = Vector2( 64, -122 )
-
-[node name="HurtBox" parent="." index="4"]
-visible = false
-position = Vector2( 0.920547, -90.9533 )
+shape = SubResource( 6 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )
@@ -250,6 +245,6 @@ stream = ExtResource( 3 )
 [node name="SFX" parent="AudioStreams" index="1"]
 stream = ExtResource( 68 )
 
-[node name="PlayerController" type="Node" parent="." index="6"]
+[node name="PlayerController" type="Node" parent="." index="4"]
 script = ExtResource( 25 )
 actorPath = NodePath("..")
