@@ -13,6 +13,7 @@ func exit(controller):
 func update(controller, delta)->ActorState:
   if hit:
     return controller.states.hit.new()
+
   var actor = controller.actor
   steer(actor)
   var players = actor.get_tree().get_nodes_in_group('players')
