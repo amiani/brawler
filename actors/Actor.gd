@@ -11,10 +11,16 @@ export var hitPlaneTolerance = 100
 export var outsideScreenDistance = 0
 export var health = 5
 export var jabDamage = 1
-onready var sprite = find_node('AnimatedSprite')
-onready var animation = find_node('AnimationPlayer')
-onready var hurtbox = sprite.find_node('HurtBox')
-onready var hitbox = sprite.find_node('HitBox')
+var sprite : Node
+var animation : Node
+var hurtbox : Node
+var hitbox : Node
+
+func _enter_tree():
+  sprite = find_node('AnimatedSprite')
+  animation = find_node('AnimationPlayer')
+  hurtbox = sprite.find_node('HurtBox')
+  hitbox = sprite.find_node('HitBox')
 
 func _ready():
   halfScreenSize = get_viewport_rect().size / 2

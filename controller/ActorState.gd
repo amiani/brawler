@@ -14,3 +14,7 @@ var hit = false
 func handleHit(controller, hitbox:Area2D):
   hit = true
   controller.actor.takeDamage(hitbox.damage)
+
+var animationFinished = false
+func handleAnimationFinished(animation:String):
+  animationFinished = true
