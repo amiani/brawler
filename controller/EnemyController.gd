@@ -5,6 +5,7 @@ const states = {
   'idle': EnemyIdleState,
   'walk': EnemyWalkState,
   'jab': EnemyJabState,
+  'hit': EnemyHitState,
 }
 
 const interest = []

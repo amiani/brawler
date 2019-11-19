@@ -10,5 +10,7 @@ func exit(controller)->void:
 func update(controller, delta)->ActorState:
   return null
 
+var hit = false
 func handleHit(controller, hitbox:Area2D):
-  controller.actor.animation.play('hit')
+  hit = true
+  controller.actor.takeDamage(hitbox.damage)
