@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/sheet.tpsheet-4e6addfb55bc087f57f816379c73119e.res"
+
+[deps]
+
+files=[ "res://images/sound words/sheet.sprites/crash.tres", "res://images/sound words/sheet.sprites/smash.tres", "res://images/sound words/sheet.sprites/pow.tres", "res://images/sound words/sheet.sprites/splash.tres", "res://images/sound words/sheet.sprites/smack.tres", "res://images/sound words/sheet.sprites/boom.tres", "res://images/sound words/sheet.sprites/crack.tres", "res://images/sound words/sheet.sprites/wham.tres", "res://images/sound words/sheet.sprites/aargh.tres", "res://images/sound words/sheet.sprites/zap.tres", "res://images/sound words/sheet.sprites/poof.tres", "res://images/sound words/sheet.sprites/wow.tres", "res://images/sound words/sheet.sprites/kaboom.tres", "res://images/sound words/sheet.sprites/ooops.tres", "res://images/sound words/sheet.sprites/boing.tres", "res://images/sound words/sheet.sprites/bang.tres" ]
+
+source_file="res://images/sound words/sheet.tpsheet"
+dest_files=[ "res://.import/sheet.tpsheet-4e6addfb55bc087f57f816379c73119e.res", "res://images/sound words/sheet.sprites/crash.tres", "res://images/sound words/sheet.sprites/smash.tres", "res://images/sound words/sheet.sprites/pow.tres", "res://images/sound words/sheet.sprites/splash.tres", "res://images/sound words/sheet.sprites/smack.tres", "res://images/sound words/sheet.sprites/boom.tres", "res://images/sound words/sheet.sprites/crack.tres", "res://images/sound words/sheet.sprites/wham.tres", "res://images/sound words/sheet.sprites/aargh.tres", "res://images/sound words/sheet.sprites/zap.tres", "res://images/sound words/sheet.sprites/poof.tres", "res://images/sound words/sheet.sprites/wow.tres", "res://images/sound words/sheet.sprites/kaboom.tres", "res://images/sound words/sheet.sprites/ooops.tres", "res://images/sound words/sheet.sprites/boing.tres", "res://images/sound words/sheet.sprites/bang.tres" ]
+
+[params]
+

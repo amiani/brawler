@@ -1,0 +1,258 @@
+{
+	"textures": [
+		{
+			"image": "sheet.png",
+			"size": {
+				"w": 509,
+				"h": 491
+			},
+			"sprites": [
+				{
+					"filename": "crash.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 160,
+						"h": 80
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "smash.png",
+					"region": {
+						"x": 163,
+						"y": 1,
+						"w": 151,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "pow.png",
+					"region": {
+						"x": 1,
+						"y": 83,
+						"w": 140,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "splash.png",
+					"region": {
+						"x": 316,
+						"y": 1,
+						"w": 140,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "smack.png",
+					"region": {
+						"x": 143,
+						"y": 88,
+						"w": 139,
+						"h": 91
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "boom.png",
+					"region": {
+						"x": 1,
+						"y": 177,
+						"w": 138,
+						"h": 95
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "crack.png",
+					"region": {
+						"x": 284,
+						"y": 95,
+						"w": 138,
+						"h": 91
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wham.png",
+					"region": {
+						"x": 141,
+						"y": 181,
+						"w": 137,
+						"h": 94
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "aargh.png",
+					"region": {
+						"x": 1,
+						"y": 274,
+						"w": 135,
+						"h": 95
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "zap.png",
+					"region": {
+						"x": 1,
+						"y": 371,
+						"w": 118,
+						"h": 110
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "poof.png",
+					"region": {
+						"x": 121,
+						"y": 371,
+						"w": 124,
+						"h": 104
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wow.png",
+					"region": {
+						"x": 280,
+						"y": 188,
+						"w": 135,
+						"h": 95
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "kaboom.png",
+					"region": {
+						"x": 247,
+						"y": 285,
+						"w": 125,
+						"h": 103
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "ooops.png",
+					"region": {
+						"x": 374,
+						"y": 285,
+						"w": 134,
+						"h": 101
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "boing.png",
+					"region": {
+						"x": 247,
+						"y": 390,
+						"w": 128,
+						"h": 100
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "bang.png",
+					"region": {
+						"x": 377,
+						"y": 388,
+						"w": 131,
+						"h": 96
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8d00f63f916e3ba51b77c3b4dbd27824:f0b9973ae01cb9432672de3e349541f3:05fd26cb8b6a0b7caf28c60684cce6ef$"
+	}
+}
