@@ -4,6 +4,7 @@ class_name Actor
 var halfScreenSize : Vector2
 var roomPosition : Vector3
 var velocity = Vector3()
+var flipVector = Vector2()
 export var walkSpeed = 300
 export var gravity = -100
 export var hitPlaneTolerance = 100
@@ -24,8 +25,10 @@ func _physics_process(delta):
 
   if sprite.flip_h && velocity.x > 0:
     sprite.flip_h = false
+    flipVector = Vector2(1, 1)
   elif !sprite.flip_h && velocity.x < 0:
     sprite.flip_h = true
+    flipVector = Vector2(-1, 1)
 
 func integrate(delta):
   roomPosition.x = position.x
@@ -48,3 +51,8 @@ func integrate(delta):
 
 func takeDamage(damage:int):
   health -= damage
+
+func flip(flip_h:bool):
+  sprite.flip_h = flip_h
+  for c in sprite.get_children():
+    c.position *= Vector2(-1, 0) if flip_h else Vector2(1, 0)

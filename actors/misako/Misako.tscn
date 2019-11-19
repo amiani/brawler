@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0000_anio.tres" type="Texture" id=2]
@@ -98,10 +98,12 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "hit"
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.76537, 4.75721 )
 
 [sub_resource type="Animation" id=3]
+
+[sub_resource type="Animation" id=4]
 length = 0.5
 step = 0.0833333
 tracks/0/type = "value"
@@ -143,35 +145,34 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite/HitBox:position")
+tracks/3/path = NodePath("AnimatedSprite/HitBox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 22.4759, -9.75273 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSprite/HitBox/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 0.166667, 0.333333 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
 }
-
-[sub_resource type="Animation" id=4]
-loop = true
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite/HitBox:basicPosition")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22.4759, -9.75273 ) ]
+}
 
 [sub_resource type="Animation" id=5]
-resource_name = "walk"
+loop = true
+
+[sub_resource type="Animation" id=6]
 length = 0.916667
 loop = true
 step = 0.0833333
@@ -218,11 +219,11 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.0858127, 0.500165 )
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 25.0
 height = 71.8662
 
-[node name="Misako" groups=[
+[node name="Misako" index="0" groups=[
 "players",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 69 )
@@ -230,19 +231,25 @@ script = ExtResource( 69 )
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
-animation = "jab"
+animation = "idle"
+frame = 2
 
 [node name="HitBox" parent="AnimatedSprite" index="0"]
 position = Vector2( 22.4759, -9.75273 )
+basicPosition = Vector2( 22.4759, -9.75273 )
+
+[node name="CollisionShape2D" parent="AnimatedSprite/HitBox" index="0"]
+shape = SubResource( 2 )
+disabled = false
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/hit = SubResource( 2 )
-anims/jab = SubResource( 3 )
-anims/jump = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/hit = SubResource( 3 )
+anims/jab = SubResource( 4 )
+anims/jump = SubResource( 5 )
+anims/walk = SubResource( 6 )
 
 [node name="PushBox" parent="." index="2"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )

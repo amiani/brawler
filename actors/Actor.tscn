@@ -5,7 +5,7 @@
 [ext_resource path="res://actors/HitBox.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.85486, 6.41957 )
+extents = Vector2( 4.48599, 6.41957 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14.9272, 28.8609 )
@@ -52,6 +52,7 @@ position = Vector2( 0, -92 )
 modulate = Color( 0.615686, 0.141176, 0.827451, 1 )
 position = Vector2( 121.272, 23.0974 )
 script = ExtResource( 3 )
+actorPath = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/HitBox"]
 shape = SubResource( 1 )
