@@ -30,6 +30,16 @@ _global_script_classes=[ {
 "path": "res://controller/EnemyController.gd"
 }, {
 "base": "ActorState",
+"class": "EnemyDieState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyDieState.gd"
+}, {
+"base": "EnemyGroundState",
+"class": "EnemyFallingDownState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyFallingDownState.gd"
+}, {
+"base": "ActorState",
 "class": "EnemyGroundState",
 "language": "GDScript",
 "path": "res://controller/enemy states/EnemyGroundState.gd"
@@ -119,6 +129,8 @@ _global_script_class_icons={
 "ActorState": "",
 "ChaseBehaviour": "",
 "EnemyController": "",
+"EnemyDieState": "",
+"EnemyFallingDownState": "",
 "EnemyGroundState": "",
 "EnemyHitState": "",
 "EnemyIdleState": "",

@@ -62,3 +62,6 @@ func flip(flip_h:bool):
   sprite.flip_h = flip_h
   for c in sprite.get_children():
     c.position *= Vector2(-1, 0) if flip_h else Vector2(1, 0)
+
+func die():
+  queue_free()

@@ -6,6 +6,8 @@ const states = {
   'walk': EnemyWalkState,
   'jab': EnemyJabState,
   'hit': EnemyHitState,
+  'fallingdown': EnemyFallingDownState,
+  'die': EnemyDieState,
 }
 
 const interest = []
