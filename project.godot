@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://controller/enemy states/EnemyGroundState.gd"
 }, {
 "base": "EnemyGroundState",
+"class": "EnemyHitState",
+"language": "GDScript",
+"path": "res://controller/enemy states/EnemyHitState.gd"
+}, {
+"base": "EnemyGroundState",
 "class": "EnemyIdleState",
 "language": "GDScript",
 "path": "res://controller/enemy states/EnemyIdleState.gd"
@@ -48,6 +53,11 @@ _global_script_classes=[ {
 "class": "EnemyWalkState",
 "language": "GDScript",
 "path": "res://controller/enemy states/EnemyWalkState.gd"
+}, {
+"base": "Area2D",
+"class": "HitBox",
+"language": "GDScript",
+"path": "res://actors/HitBox.gd"
 }, {
 "base": "Actor",
 "class": "Misako",
@@ -84,15 +94,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://controller/player states/PlayerWalkState.gd"
 }, {
+"base": "Node2D",
+"class": "Room",
+"language": "GDScript",
+"path": "res://rooms/Room.gd"
+}, {
+"base": "Node2D",
+"class": "Spawner",
+"language": "GDScript",
+"path": "res://Spawner.gd"
+}, {
 "base": "Node",
 "class": "StateController",
 "language": "GDScript",
 "path": "res://controller/StateController.gd"
-}, {
-"base": "Reference",
-"class": "Steerer",
-"language": "GDScript",
-"path": "res://controller/steering behaviour/Steerer.gd"
 }, {
 "base": "Node",
 "class": "SteeringBehaviour",
@@ -105,9 +120,11 @@ _global_script_class_icons={
 "ChaseBehaviour": "",
 "EnemyController": "",
 "EnemyGroundState": "",
+"EnemyHitState": "",
 "EnemyIdleState": "",
 "EnemyJabState": "",
 "EnemyWalkState": "",
+"HitBox": "",
 "Misako": "",
 "PlayerController": "",
 "PlayerGroundState": "",
@@ -115,8 +132,9 @@ _global_script_class_icons={
 "PlayerJabState": "",
 "PlayerJumpState": "",
 "PlayerWalkState": "",
+"Room": "",
+"Spawner": "",
 "StateController": "",
-"Steerer": "",
 "SteeringBehaviour": ""
 }
 
