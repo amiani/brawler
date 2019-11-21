@@ -67,7 +67,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "HitBox",
 "language": "GDScript",
-"path": "res://actors/HitBox.gd"
+"path": "res://actors/Hitbox.gd"
 }, {
 "base": "Actor",
 "class": "Misako",
