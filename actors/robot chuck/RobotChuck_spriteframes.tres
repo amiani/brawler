@@ -1,0 +1,71 @@
+[gd_resource type="SpriteFrames" load_steps=37 format=2]
+
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/6.tres" type="Texture" id=1]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/3.tres" type="Texture" id=2]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/idle/2.tres" type="Texture" id=3]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/0.tres" type="Texture" id=4]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/2.tres" type="Texture" id=5]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/3.tres" type="Texture" id=6]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/2.tres" type="Texture" id=7]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/4.tres" type="Texture" id=8]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/idle/3.tres" type="Texture" id=9]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/hit/3.tres" type="Texture" id=10]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/hit/2.tres" type="Texture" id=11]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/hit/1.tres" type="Texture" id=12]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/hit/4.tres" type="Texture" id=13]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/hit/0.tres" type="Texture" id=14]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/13.tres" type="Texture" id=15]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/10.tres" type="Texture" id=16]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/12.tres" type="Texture" id=17]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/14.tres" type="Texture" id=18]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/15.tres" type="Texture" id=19]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/16.tres" type="Texture" id=20]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/1.tres" type="Texture" id=21]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/3.tres" type="Texture" id=22]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/2.tres" type="Texture" id=23]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/die/3.tres" type="Texture" id=24]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/die/1.tres" type="Texture" id=25]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/die/0.tres" type="Texture" id=26]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/die/2.tres" type="Texture" id=27]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/1.tres" type="Texture" id=28]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/idle/1.tres" type="Texture" id=29]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/7.tres" type="Texture" id=30]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/walk/5.tres" type="Texture" id=31]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/0.tres" type="Texture" id=32]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/launched/11.tres" type="Texture" id=33]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/1.tres" type="Texture" id=34]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/punch/0.tres" type="Texture" id=35]
+[ext_resource path="res://actors/robot chuck/sheet.sprites/idle/0.tres" type="Texture" id=36]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 29 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 34 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "jab",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 16 ), ExtResource( 33 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "fallingdown",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 28 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "hit",
+"speed": 7.0
+} ]

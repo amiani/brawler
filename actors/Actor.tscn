@@ -2,80 +2,58 @@
 
 [ext_resource path="res://actors/Actor.gd" type="Script" id=1]
 [ext_resource path="res://controller/StateController.gd" type="Script" id=2]
-[ext_resource path="res://actors/HitBox.gd" type="Script" id=3]
+[ext_resource path="res://actors/Hitbox.gd" type="Script" id=3]
+[ext_resource path="res://actors/ActorSprite.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.48599, 6.41957 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.9272, 28.8609 )
-
-[sub_resource type="Animation" id=3]
-length = 1.33333
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "idle" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.25 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 15 ]
-}
+extents = Vector2( 41.1252, 91.6566 )
 
 [node name="Actor" type="KinematicBody2D" groups=[
 "actors",
 ]]
 script = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Focus" type="Node2D" parent="."]
 position = Vector2( 0, -92 )
 
-[node name="HitBox" type="Area2D" parent="AnimatedSprite" groups=[
+[node name="ActorSprite" type="AnimatedSprite" parent="Focus"]
+script = ExtResource( 4 )
+
+[node name="Hitboxes" type="Node2D" parent="Focus"]
+
+[node name="Hitbox" type="Area2D" parent="Focus/Hitboxes" groups=[
 "hitboxes",
 ]]
 modulate = Color( 0.615686, 0.141176, 0.827451, 1 )
-position = Vector2( 121.272, 23.0974 )
+position = Vector2( 121.272, -68.9026 )
 script = ExtResource( 3 )
-actorPath = NodePath("../..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Focus/Hitboxes/Hitbox"]
 shape = SubResource( 1 )
 disabled = true
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HurtBox" type="Area2D" parent="AnimatedSprite" groups=[
+[node name="Hurtboxes" type="Node2D" parent="Focus"]
+
+[node name="Hurtbox" type="Area2D" parent="Focus/Hurtboxes" groups=[
 "hurtboxes",
 ]]
 modulate = Color( 0.968627, 1, 0, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Focus/Hurtboxes/Hurtbox"]
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 3 )
 
-[node name="PushBox" type="CollisionShape2D" parent="."]
+[node name="Pushbox" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 
 [node name="AudioStreams" type="Node" parent="."]
@@ -87,4 +65,4 @@ rotation = 1.5708
 [node name="StateController" type="Node" parent="."]
 script = ExtResource( 2 )
 actorPath = NodePath("..")
-[connection signal="area_entered" from="AnimatedSprite/HurtBox" to="StateController" method="handleHurtboxEntered"]
+[connection signal="area_entered" from="Focus/Hurtboxes/Hurtbox" to="StateController" method="handleHurtboxEntered"]
