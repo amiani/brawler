@@ -84,25 +84,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actors/misako/Misako.gd"
 }, {
+"base": "ActorState",
+"class": "PlayerAttackState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerAttackState.gd"
+}, {
 "base": "StateController",
 "class": "PlayerController",
 "language": "GDScript",
 "path": "res://controller/PlayerController.gd"
 }, {
 "base": "ActorState",
-"class": "PlayerGroundState",
-"language": "GDScript",
-"path": "res://controller/player states/PlayerGroundState.gd"
-}, {
-"base": "PlayerGroundState",
 "class": "PlayerIdleState",
 "language": "GDScript",
 "path": "res://controller/player states/PlayerIdleState.gd"
-}, {
-"base": "PlayerGroundState",
-"class": "PlayerJabState",
-"language": "GDScript",
-"path": "res://controller/player states/PlayerJabState.gd"
 }, {
 "base": "ActorState",
 "class": "PlayerJumpState",
@@ -150,10 +145,9 @@ _global_script_class_icons={
 "EnemyWalkState": "",
 "HitBox": "",
 "Misako": "",
+"PlayerAttackState": "",
 "PlayerController": "",
-"PlayerGroundState": "",
 "PlayerIdleState": "",
-"PlayerJabState": "",
 "PlayerJumpState": "",
 "PlayerWalkState": "",
 "Room": "",
