@@ -18,7 +18,7 @@ func updateState(delta):
 
 signal hit
 func handleHurtboxEntered(area:Area2D):
-  if area.is_in_group('hitboxes'):
+  if area.is_in_group('hitboxes') && area.actor != actor:
     var yDistance = abs(area.actor.position.y - actor.position.y)
     if yDistance < actor.hitPlaneTolerance:
       state.handleHurt(self, area)
