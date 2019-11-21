@@ -7,6 +7,8 @@ func enter(controller)->void:
 var delay = .2 #seconds
 var time = 0
 func update(controller, delta)->ActorState:
+  if controller.actor.health <= 0:
+    return controller.states.fallingdown.new()
   if hurt:
     return controller.states.hurt.new()
 

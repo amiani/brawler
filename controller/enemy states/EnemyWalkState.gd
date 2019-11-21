@@ -11,6 +11,8 @@ func exit(controller):
   controller.actor.animation.stop()
 
 func update(controller, delta)->ActorState:
+  if controller.actor.health <= 0:
+    return controller.states.fallingdown.new()
   if hurt:
     return controller.states.hurt.new()
 

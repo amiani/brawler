@@ -6,4 +6,9 @@ func enter(controller):
   controller.actor.animation.play('fallingdown')
 
 func update(controller, delta):
-  return controller.states.die.new() if animationFinished else null
+  if animationFinished:
+    if controller.actor.health <= 0:
+      return controller.states.die.new()
+    else:
+      controller.states.getup.new()
+  return null
