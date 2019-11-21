@@ -7,8 +7,8 @@ func enter(controller)->void:
 var delay = .2 #seconds
 var time = 0
 func update(controller, delta)->ActorState:
-  if hit:
-    return controller.states.hit.new()
+  if hurt:
+    return controller.states.hurt.new()
 
   time += delta
   if time >= delay:

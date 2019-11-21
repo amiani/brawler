@@ -11,8 +11,8 @@ func exit(controller):
   controller.actor.animation.stop()
 
 func update(controller, delta)->ActorState:
-  if hit:
-    return controller.states.hit.new()
+  if hurt:
+    return controller.states.hurt.new()
 
   var actor = controller.actor
   steer(actor)

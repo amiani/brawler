@@ -45,7 +45,7 @@ _global_script_classes=[ {
 "path": "res://controller/enemy states/EnemyGroundState.gd"
 }, {
 "base": "EnemyGroundState",
-"class": "EnemyHitState",
+"class": "EnemyHurtState",
 "language": "GDScript",
 "path": "res://controller/enemy states/EnemyHitState.gd"
 }, {
@@ -132,7 +132,7 @@ _global_script_class_icons={
 "EnemyDieState": "",
 "EnemyFallingDownState": "",
 "EnemyGroundState": "",
-"EnemyHitState": "",
+"EnemyHurtState": "",
 "EnemyIdleState": "",
 "EnemyJabState": "",
 "EnemyWalkState": "",

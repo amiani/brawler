@@ -5,7 +5,7 @@ const states = {
   'idle': EnemyIdleState,
   'walk': EnemyWalkState,
   'jab': EnemyJabState,
-  'hit': EnemyHitState,
+  'hurt': EnemyHurtState,
   'fallingdown': EnemyFallingDownState,
   'die': EnemyDieState,
 }
