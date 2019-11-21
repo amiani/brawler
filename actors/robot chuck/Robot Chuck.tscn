@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/robot chuck/RobotChuck_spriteframes.tres" type="SpriteFrames" id=2]
@@ -44,6 +44,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.72549, 0.152941, 0.152941, 1 ), Color( 1, 1, 1, 1 ), Color( 0.72549, 0.152941, 0.152941, 1 ), Color( 1, 1, 1, 1 ), Color( 0.72549, 0.152941, 0.152941, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Focus/Hurtboxes/Hurtbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 1.375
@@ -86,6 +98,58 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=3]
+resource_name = "getup"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Focus/ActorSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "getup" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Focus/ActorSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Focus/ActorSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -59.3591, 47.4959 ), Vector2( -59.3591, 47.4959 ), Vector2( -50.7133, 37.7694 ), Vector2( -23.6952, 11.832 ), Vector2( -1, -5.99997 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Focus/Hurtboxes/Hurtbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
 length = 0.714286
 step = 0.142857
 tracks/0/type = "value"
@@ -126,8 +190,20 @@ tracks/2/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Focus/ActorSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
@@ -178,7 +254,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -218,7 +294,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 20.0
 height = 54.8621
 
@@ -229,10 +305,10 @@ walkSpeed = 200
 outsideScreenDistance = 100
 
 [node name="ActorSprite" parent="Focus" index="0"]
+position = Vector2( -59.3591, 47.4959 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "walk"
-basicPosition = Vector2( 0, 0 )
+animation = "getup"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
 position = Vector2( 24.7013, 3.2594 )
@@ -240,12 +316,13 @@ position = Vector2( 24.7013, 3.2594 )
 [node name="AnimationPlayer" parent="." index="1"]
 anims/die = SubResource( 1 )
 anims/fallingdown = SubResource( 2 )
-anims/hit = SubResource( 3 )
-anims/jab = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/getup = SubResource( 3 )
+anims/hurt = SubResource( 4 )
+anims/jab = SubResource( 5 )
+anims/walk = SubResource( 6 )
 
 [node name="Pushbox" parent="." index="2"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )

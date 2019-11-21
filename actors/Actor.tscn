@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actors/Actor.gd" type="Script" id=1]
 [ext_resource path="res://controller/StateController.gd" type="Script" id=2]
 [ext_resource path="res://actors/Hitbox.gd" type="Script" id=3]
 [ext_resource path="res://actors/ActorSprite.gd" type="Script" id=4]
+[ext_resource path="res://actors/ActorSFX.gd" type="Script" id=5]
+[ext_resource path="res://sounds/Super Punch MMA-SoundBible.com.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.3126, 14.4537 )
@@ -60,9 +62,12 @@ rotation = 1.5708
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="AudioStreams"]
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="AudioStreams"]
+[node name="ActorSFX" type="AudioStreamPlayer2D" parent="AudioStreams"]
+script = ExtResource( 5 )
+hitStream = ExtResource( 6 )
 
 [node name="StateController" type="Node" parent="."]
 script = ExtResource( 2 )
 actorPath = NodePath("..")
 [connection signal="area_entered" from="Focus/Hurtboxes/Hurtbox" to="StateController" method="handleHurtboxEntered"]
+[connection signal="hit" from="StateController" to="AudioStreams/ActorSFX" method="handleHit"]

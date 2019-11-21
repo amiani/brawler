@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/misako_spriteframes.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://actors/misako/sfx/female02_attack02.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sounds/Super Punch MMA-SoundBible.com.wav" type="AudioStream" id=4]
 [ext_resource path="res://controller/PlayerController.gd" type="Script" id=25]
 [ext_resource path="res://sounds/270415__littlerobotsoundfactory__footstep-dirt-00.wav" type="AudioStream" id=67]
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
@@ -19,15 +20,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.166667 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "idle" ]
+"values": [ "idle", "idle" ]
 }
 
 [sub_resource type="Animation" id=2]
-length = 0.5
-step = 0.0833333
+length = 0.4
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
 tracks/0/interp = 1
@@ -47,7 +48,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.416667 ),
+"times": PoolRealArray( 0, 0.333334 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 5 ]
@@ -73,7 +74,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.166667, 0.333333 ),
+"times": PoolRealArray( 0, 0.133334, 0.266666 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -135,7 +136,7 @@ tracks/1/keys = {
 "values": [ 0, 11 ]
 }
 tracks/2/type = "audio"
-tracks/2/path = NodePath("AudioStreams/SFX")
+tracks/2/path = NodePath("AudioStreams/ActorSFX")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -165,10 +166,9 @@ script = ExtResource( 69 )
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "jab"
+animation = "walk"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
-position = Vector2( 66.1033, -28.399 )
 position = Vector2( 66, -28 )
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -183,8 +183,8 @@ shape = SubResource( 5 )
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )
 
-[node name="SFX" parent="AudioStreams" index="1"]
-stream = ExtResource( 68 )
+[node name="ActorSFX" parent="AudioStreams" index="1"]
+hitStream = ExtResource( 4 )
 
 [node name="StateController" parent="." index="4"]
 script = ExtResource( 25 )

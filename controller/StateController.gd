@@ -16,11 +16,13 @@ func updateState(delta):
     state = nextState
     state.enter(self)
 
+signal hit
 func handleHurtboxEntered(area:Area2D):
   if area.is_in_group('hitboxes'):
     var yDistance = abs(area.actor.position.y - actor.position.y)
     if yDistance < actor.hitPlaneTolerance:
       state.handleHurt(self, area)
+      emit_signal('hit')
 
 func handleAnimationFinished(animation):
   state.handleAnimationFinished(animation)
