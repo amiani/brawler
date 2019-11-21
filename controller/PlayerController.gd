@@ -5,8 +5,31 @@ var states = {
   'walk': PlayerWalkState,
   'idle': PlayerIdleState,
   'jump': PlayerJumpState,
-  'jab': PlayerJabState,
-  'ground': PlayerGroundState,
+  'attack': PlayerAttackState,
+}
+
+var attacks = {
+  'jab': {
+    'animation': 'jab',
+    'combo': {
+      'attack': 'cross'
+    },
+    'damage': 1
+  },
+
+  'cross': {
+    'animation': 'cross',
+    'combo': {
+      'attack': 'kick'
+    },
+    'damage': 2
+  },
+
+  'kick': {
+    'animation': 'kick',
+    'combo': {},
+    'damage': 3
+  }
 }
 
 func _ready() -> void:
@@ -16,8 +39,8 @@ func _ready() -> void:
 func handleActorReady():
   state.enter(self)
 
-const inputs = []
-const INPUTBUFFERLENGTH = 10
+var inputs = []
+const INPUTBUFFERLENGTH = 9
 const ACTIONS = ['right', 'left', 'up', 'down', 'jump', 'attack']
 func getInput():
   var input = {}

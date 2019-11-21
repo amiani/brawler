@@ -9,4 +9,4 @@ func enter(controller):
 
 func update(controller, delta):
   if controller.actor.roomPosition.z == 0:
-    return controller.states.ground.new()
+    return controller.states.idle.new()

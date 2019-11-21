@@ -1,4 +1,4 @@
-extends PlayerGroundState
+extends ActorState
 class_name PlayerWalkState
 
 func enter(controller):
@@ -25,7 +25,7 @@ func update(controller, delta) -> ActorState:
     direction.y = 0
 
   if input.attack.just_pressed:
-    return controller.states.jab.new()
+    return controller.states.attack.new(controller.attacks.jab)
   if input.jump.just_pressed:
     return controller.states.jump.new()
 
