@@ -79,7 +79,7 @@ tracks/3/keys = {
 "values": [ true, false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Focus/Hitboxes/Hitbox:basicPosition")
+tracks/4/path = NodePath("Focus/Hitboxes/Hitbox:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -157,7 +157,7 @@ tracks/2/keys = {
 radius = 20.0
 height = 85.6245
 
-[node name="Misako" index="0" groups=[
+[node name="Misako" groups=[
 "players",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 69 )
@@ -169,7 +169,7 @@ animation = "jab"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
 position = Vector2( 66.1033, -28.399 )
-basicPosition = Vector2( 22.4759, -9.75273 )
+position = Vector2( 66, -28 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/idle = SubResource( 1 )

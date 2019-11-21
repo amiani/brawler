@@ -4,7 +4,6 @@ class_name Actor
 var halfScreenSize : Vector2
 var roomPosition : Vector3
 var velocity = Vector3()
-var flipVector = Vector2(1, 0)
 export var walkSpeed = 300
 export var gravity = -100
 export var hitPlaneTolerance = 100
@@ -21,6 +20,7 @@ var hitbox : Area2D
 func _enter_tree():
   focus = find_node('Focus')
   sprite = focus.find_node('ActorSprite')
+  sprite.actor = self
   animation = find_node('AnimationPlayer')
   hurtboxes = focus.find_node('Hurtboxes').get_children()
   hitboxes = focus.find_node('Hitboxes').get_children()
@@ -35,12 +35,10 @@ func _ready():
 func _physics_process(delta):
   integrate(delta)
 
-  if sprite.flip_h && velocity.x > 0:
-    sprite.flip_h = false
-    flipVector = Vector2(1, 1)
-  elif !sprite.flip_h && velocity.x < 0:
-    sprite.flip_h = true
-    flipVector = Vector2(-1, 1)
+  if focus.scale.x < 0 && velocity.x > 0:
+    focus.scale.x = 1
+  elif focus.scale.x > 0 && velocity.x < 0:
+    focus.scale.x = -1
 
 func integrate(delta):
   roomPosition.x = position.x
