@@ -2,7 +2,7 @@ extends ActorState
 class_name PlayerJumpState
 
 func enter(controller):
-  controller.actor.sprite.animation = 'jump'
+  controller.actor.animation.play('jump')
   controller.actor.velocity.z = 400
   controller.actor.velocity.y = 0
   controller.actor.roomPosition.z = .1
