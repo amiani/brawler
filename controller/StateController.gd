@@ -6,7 +6,7 @@ export(NodePath) var actorPath
 var actor
 func _ready() -> void:
   actor = get_node(actorPath)
-  actor.find_node('HurtBox').connect('area_entered', self, 'handleHurtBoxEntered')
+  #actor.find_node('HurtBox').connect('area_entered', self, 'handleHurtboxEntered')
   actor.animation.connect('animation_finished', self, 'handleAnimationFinished')
 
 func updateState(delta):
@@ -17,9 +17,10 @@ func updateState(delta):
     state.enter(self)
 
 func handleHurtboxEntered(area:Area2D):
-  var yDistance = abs(area.get_parent().get_parent().roomPosition.y - actor.roomPosition.y)
-  if area.is_in_group('hitboxes') && yDistance < actor.hitPlaneTolerance:
-    state.handleHurt(self, area)
+  if area.is_in_group('hitboxes'):
+    var yDistance = abs(area.actor.position.y - actor.position.y)
+    if yDistance < actor.hitPlaneTolerance:
+      state.handleHurt(self, area)
 
 func handleAnimationFinished(animation):
   state.handleAnimationFinished(animation)

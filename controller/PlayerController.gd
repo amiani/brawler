@@ -10,7 +10,6 @@ var states = {
 }
 
 func _ready() -> void:
-  ._ready()
   state = PlayerIdleState.new()
   actor.connect('ready', self, 'handleActorReady')
 

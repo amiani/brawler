@@ -5,7 +5,7 @@ export(PackedScene) var mobScene
 signal spawn
 var time = 0
 export var spawnTimer = 5
-export var groupSize = 2
+export var groupSize = 1
 func _process(delta):
   time += delta
   if time >= spawnTimer:

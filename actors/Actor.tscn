@@ -6,7 +6,7 @@
 [ext_resource path="res://actors/ActorSprite.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.48599, 6.41957 )
+extents = Vector2( 22.3126, 14.4537 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 41.1252, 91.6566 )

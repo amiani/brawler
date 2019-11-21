@@ -4,23 +4,29 @@ class_name Actor
 var halfScreenSize : Vector2
 var roomPosition : Vector3
 var velocity = Vector3()
-var flipVector = Vector2()
+var flipVector = Vector2(1, 0)
 export var walkSpeed = 300
 export var gravity = -100
 export var hitPlaneTolerance = 100
 export var outsideScreenDistance = 0
 export var health = 5
 export var jabDamage = 1
-var sprite : Node
-var animation : Node
-var hurtbox : Node
-var hitbox : Node
+var focus : Node2D
+var sprite : AnimatedSprite
+var animation : AnimationPlayer
+var hitboxes : Array
+var hurtboxes : Array
+var hitbox : Area2D
 
 func _enter_tree():
-  sprite = find_node('AnimatedSprite')
+  focus = find_node('Focus')
+  sprite = focus.find_node('ActorSprite')
   animation = find_node('AnimationPlayer')
-  hurtbox = sprite.find_node('HurtBox')
-  hitbox = sprite.find_node('HitBox')
+  hurtboxes = focus.find_node('Hurtboxes').get_children()
+  hitboxes = focus.find_node('Hitboxes').get_children()
+  hitbox = hitboxes[0]
+  for h in hitboxes:
+    h.actor = self
 
 func _ready():
   halfScreenSize = get_viewport_rect().size / 2
@@ -51,7 +57,7 @@ func integrate(delta):
   var clampedVelocity = Vector2(
     (roomPosition.x - position.x) / delta,
     (roomPosition.y - position.y) / delta)
-  sprite.position.y = -roomPosition.z
+  focus.position.y = -roomPosition.z - 92
   move_and_slide(Vector2(velocity.x, velocity.y))
   z_index = roomPosition.y
 
