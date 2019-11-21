@@ -8,7 +8,7 @@
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
 [ext_resource path="res://actors/misako/Misako.gd" type="Script" id=69]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "idle"
 length = 1.25
 step = 0.0833333
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ "idle" ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 length = 0.5
 step = 0.0833333
 tracks/0/type = "value"
@@ -88,10 +88,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 22.4759, -9.75273 ) ]
+"values": [ Vector2( 66, -28 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
@@ -106,7 +106,7 @@ tracks/0/keys = {
 "values": [ "jump" ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.916667
 loop = true
 step = 0.0833333
@@ -153,9 +153,9 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.0858127, 0.500165 )
 }
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 25.0
-height = 71.8662
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 20.0
+height = 85.6245
 
 [node name="Misako" index="0" groups=[
 "players",
@@ -165,21 +165,20 @@ script = ExtResource( 69 )
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "idle"
-frame = 4
-playing = true
+animation = "jab"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
+position = Vector2( 66.1033, -28.399 )
 basicPosition = Vector2( 22.4759, -9.75273 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/idle = SubResource( 5 )
-anims/jab = SubResource( 1 )
-anims/jump = SubResource( 2 )
-anims/walk = SubResource( 3 )
+anims/idle = SubResource( 1 )
+anims/jab = SubResource( 2 )
+anims/jump = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
-[node name="PushBox" parent="." index="2"]
-shape = SubResource( 4 )
+[node name="Pushbox" parent="." index="2"]
+shape = SubResource( 5 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )
