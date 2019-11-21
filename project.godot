@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "EnemyGroundState",
 "class": "EnemyHurtState",
 "language": "GDScript",
-"path": "res://controller/enemy states/EnemyHitState.gd"
+"path": "res://controller/enemy states/EnemyHurtState.gd"
 }, {
 "base": "EnemyGroundState",
 "class": "EnemyIdleState",
