@@ -10,11 +10,10 @@
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
 [ext_resource path="res://actors/misako/Misako.gd" type="Script" id=69]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5099, 14.036 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "cross"
+[sub_resource type="Animation" id=2]
 length = 0.466667
 step = 0.0666667
 tracks/0/type = "value"
@@ -89,12 +88,13 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ SubResource( 11 ) ]
+"values": [ SubResource( 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-length = 1.25
-step = 0.0833333
+[sub_resource type="Animation" id=3]
+length = 1.06667
+loop = true
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
 tracks/0/interp = 1
@@ -102,13 +102,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.166667 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "idle", "idle" ]
+"values": [ "idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Focus/ActorSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 15 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.4
 step = 0.0666667
 tracks/0/type = "value"
@@ -183,10 +195,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ SubResource( 11 ) ]
+"values": [ SubResource( 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
@@ -201,14 +213,13 @@ tracks/0/keys = {
 "values": [ "jump" ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 30.8654, 59.8087 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 26.0988, 27.237 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "kick"
+[sub_resource type="Animation" id=8]
 length = 0.733333
 step = 0.0666667
 tracks/0/type = "value"
@@ -283,10 +294,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0.2, 0.266667 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ SubResource( 9 ), SubResource( 10 ) ]
+"values": [ SubResource( 6 ), SubResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 length = 0.916667
 loop = true
 step = 0.0833333
@@ -333,7 +344,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.0858127, 0.500165 )
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=10]
 radius = 20.0
 height = 85.6245
 
@@ -345,26 +356,24 @@ script = ExtResource( 69 )
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "cross"
-frame = 2
+animation = "idle"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
 position = Vector2( 64.3199, -36.6458 )
 
 [node name="CollisionShape2D" parent="Focus/Hitboxes/Hitbox" index="0"]
-shape = SubResource( 11 )
-disabled = false
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/cross = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/jab = SubResource( 3 )
-anims/jump = SubResource( 4 )
-anims/kick = SubResource( 7 )
-anims/walk = SubResource( 5 )
+anims/cross = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/jab = SubResource( 4 )
+anims/jump = SubResource( 5 )
+anims/kick = SubResource( 8 )
+anims/walk = SubResource( 9 )
 
 [node name="Pushbox" parent="." index="2"]
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
 stream = ExtResource( 3 )

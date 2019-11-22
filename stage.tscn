@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://rooms/Room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://actors/misako/Misako.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Spawner.gd" type="Script" id=3]
-[ext_resource path="res://music/Ludum Dare 28 - Track 1.ogg" type="AudioStream" id=4]
-[ext_resource path="res://actors/robot chuck/Robot Chuck.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawner.gd" type="Script" id=2]
+[ext_resource path="res://actors/robot chuck/Robot Chuck.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/misako/Misako.tscn" type="PackedScene" id=4]
+[ext_resource path="res://music/Ludum Dare 28 - Track 1.ogg" type="AudioStream" id=5]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -13,16 +13,17 @@ __meta__ = {
 }
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2.15857, 0 )
 
 [node name="Spawners" type="Node" parent="Room"]
 
 [node name="Spawner" type="Node2D" parent="Room/Spawners"]
 position = Vector2( -1072.76, 236.698 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-mobScene = ExtResource( 5 )
+mobScene = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="Room/Spawners/Spawner"]
 margin_right = 40.0
@@ -35,11 +36,11 @@ __meta__ = {
 
 [node name="Spawner2" type="Node2D" parent="Room/Spawners"]
 position = Vector2( 1091.46, 286.694 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-mobScene = ExtResource( 5 )
+mobScene = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="Room/Spawners/Spawner2"]
 margin_right = 40.0
@@ -50,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Misako" parent="Room" instance=ExtResource( 2 )]
+[node name="Misako" parent="Room" instance=ExtResource( 4 )]
 position = Vector2( 4.12362, 185.882 )
 gravity = -20
 
@@ -61,7 +62,7 @@ __meta__ = {
 }
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -27.155
 autoplay = true
 [connection signal="spawn" from="Room/Spawners/Spawner" to="Room" method="handleSpawn"]

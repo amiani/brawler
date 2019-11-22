@@ -298,7 +298,7 @@ tracks/2/keys = {
 radius = 20.0
 height = 54.8621
 
-[node name="Robot Chuck" index="0" groups=[
+[node name="Robot Chuck" groups=[
 "enemies",
 ] instance=ExtResource( 1 )]
 walkSpeed = 200
@@ -308,7 +308,7 @@ outsideScreenDistance = 100
 position = Vector2( -59.3591, 47.4959 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "getup"
+animation = "jab"
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
 position = Vector2( 24.7013, 3.2594 )
