@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://menus/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://menus/FullScreenButton.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="PauseMenu" type="Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+margin_left = 954.0
+margin_top = 510.0
+margin_right = 966.0
+margin_bottom = 570.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/vseparation = 20
+
+[node name="FullScreenButton" type="Button" parent="MarginContainer/GridContainer"]
+margin_right = 75.0
+margin_bottom = 25.0
+script = ExtResource( 2 )
+
+[node name="FullScreenLabel" type="Label" parent="MarginContainer/GridContainer/FullScreenButton"]
+text = "Full Screen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/GridContainer"]
+margin_top = 40.0
+margin_right = 75.0
+margin_bottom = 65.0
+
+[node name="ResumeLabel" type="Label" parent="MarginContainer/GridContainer/ResumeButton"]
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MarginContainer/GridContainer/FullScreenButton" to="." method="handleFullScreenPressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/ResumeButton" to="." method="handleResumePressed"]
