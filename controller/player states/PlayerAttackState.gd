@@ -13,6 +13,7 @@ func enter(controller)->void:
 
 func update(controller, delta) -> ActorState:
   if animationFinished:
+    var inputs = controller.inputs
     for i in range(controller.inputs.size()-1, -1, -1):
       for c in data.combo:
         if c.relevanceMask & controller.inputs[i].mask == c.inputMask:
