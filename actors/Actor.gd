@@ -34,12 +34,12 @@ func _ready():
 
 func _physics_process(delta):
   integrate(delta)
-
   if focus.scale.x < 0 && velocity.x > 0:
     focus.scale.x = 1
   elif focus.scale.x > 0 && velocity.x < 0:
     focus.scale.x = -1
 
+export(int) var snap : int
 func integrate(delta):
   roomPosition.x = position.x
   roomPosition.y = position.y
@@ -56,7 +56,12 @@ func integrate(delta):
     (roomPosition.x - position.x) / delta,
     (roomPosition.y - position.y) / delta)
   focus.position.y = -roomPosition.z - 92
+  velocity.x += snap * focus.scale.x / delta
   move_and_slide(Vector2(velocity.x, velocity.y))
+  velocity.x -= snap * focus.scale.x / delta
+  snap = 0
+  if velocity.length() < .1:
+    velocity = Vector3()
   z_index = roomPosition.y
 
 func takeDamage(damage:int):
