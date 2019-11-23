@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/robot chuck/RobotChuck_spriteframes.tres" type="SpriteFrames" id=2]
@@ -58,8 +58,8 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-length = 1.375
-step = 0.125
+length = 0.733333
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Focus/ActorSprite:animation")
 tracks/0/interp = 1
@@ -79,7 +79,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.25 ),
+"times": PoolRealArray( 0, 0.66625 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 10 ]
@@ -91,10 +91,22 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1 ),
+"times": PoolRealArray( 0, 0.066625, 0.13325, 0.199875, 0.2665, 0.333125, 0.39975, 0.466375, 0.533 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( 0, 0 ), Vector2( -62, 3 ), Vector2( -69, 15 ), Vector2( -78, 33 ), Vector2( -84, 60 ), Vector2( -88, 83 ), Vector2( -87, 77 ), Vector2( -84, 49 ), Vector2( -84, 49 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Focus/Hurtboxes/Hurtbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -202,6 +214,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Focus/Hitboxes/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 18.7913, 18.4447 )
 
 [sub_resource type="Animation" id=5]
 length = 0.4
@@ -239,7 +266,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 24.7013, 3.2594 ) ]
+"values": [ Vector2( 69.6366, 10.085 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Focus/Hitboxes/Hitbox/CollisionShape2D:disabled")
@@ -248,10 +275,22 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Focus/Hitboxes/Hitbox/CollisionShape2D:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 8 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -293,6 +332,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Focus/Hurtboxes/Hurtbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 20.0
@@ -301,17 +352,18 @@ height = 54.8621
 [node name="Robot Chuck" groups=[
 "enemies",
 ] instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
 walkSpeed = 200
 outsideScreenDistance = 100
 
 [node name="ActorSprite" parent="Focus" index="0"]
-position = Vector2( -59.3591, 47.4959 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "jab"
+frame = 3
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
-position = Vector2( 24.7013, 3.2594 )
+position = Vector2( 69.6366, 10.085 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/die = SubResource( 1 )
