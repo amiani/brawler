@@ -66,7 +66,7 @@ func _ready() -> void:
     mask <<= 1
 
   initCombos(attacks, actionMasks)
-  state = PlayerIdleState.new()
+  state = PlayerBattleStartState.new()
   actor.connect('ready', self, 'handleActorReady')
 
 func handleActorReady():
