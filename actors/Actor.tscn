@@ -18,7 +18,6 @@ extents = Vector2( 41.1252, 91.6566 )
 "actors",
 ]]
 script = ExtResource( 1 )
-outsideScreenDistance = 100
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2( 0, -92 )

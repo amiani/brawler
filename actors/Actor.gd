@@ -53,16 +53,14 @@ func integrate(delta):
   else:
     velocity.z = 0
     roomPosition.z = 0
+  velocity.x += snap * focus.scale.x / delta
   roomPosition += velocity * delta
   roomPosition.x = clamp(roomPosition.x, -halfScreenSize.x - outsideScreenDistance, halfScreenSize.x + outsideScreenDistance)
   roomPosition.y = clamp(roomPosition.y, 180, halfScreenSize.y)
   roomPosition.z = clamp(roomPosition.z, 0, 100)
-  var clampedVelocity = Vector2(
-    (roomPosition.x - position.x) / delta,
-    (roomPosition.y - position.y) / delta)
+  var clampedVelocity = Vector2(roomPosition.x - position.x, roomPosition.y - position.y) / delta
   focus.position.y = -roomPosition.z - 92
-  velocity.x += snap * focus.scale.x / delta
-  var collision = move_and_collide(Vector2(velocity.x, velocity.y)*delta)
+  var collision = move_and_collide(clampedVelocity * delta)
   velocity.x -= snap * focus.scale.x / delta
   if collision:
     var collider = collision.collider
