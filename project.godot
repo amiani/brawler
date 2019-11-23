@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actors/Hitbox.gd"
 }, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://actors/Hurtbox.gd"
+}, {
 "base": "Actor",
 "class": "Misako",
 "language": "GDScript",
@@ -149,6 +154,7 @@ _global_script_class_icons={
 "EnemyJabState": "",
 "EnemyWalkState": "",
 "HitBox": "",
+"Hurtbox": "",
 "Misako": "",
 "PlayerAttackState": "",
 "PlayerBattleStartState": "",
