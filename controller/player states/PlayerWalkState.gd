@@ -10,6 +10,11 @@ func exit(controller):
 var direction = Vector2()
 func update(controller, delta) -> ActorState:
   var input = controller.inputs[0]
+  if input.attack.just_pressed:
+    return controller.states.attack.new(controller.attacks.jab)
+  if input.jump.just_pressed:
+    return controller.states.jump.new()
+
   if input.right.pressed:
     direction.x = 1
   elif input.left.pressed:
@@ -24,14 +29,10 @@ func update(controller, delta) -> ActorState:
   else:
     direction.y = 0
 
-  if input.attack.just_pressed:
-    return controller.states.attack.new(controller.attacks.jab)
-  if input.jump.just_pressed:
-    return controller.states.jump.new()
+  if direction.x == 0 && direction.y == 0:
+    return controller.states.idle.new()
 
   var groundVelocity = direction.normalized() * controller.actor.walkSpeed
   controller.actor.velocity.x = groundVelocity.x
   controller.actor.velocity.y = groundVelocity.y
-  if direction.x == 0 && direction.y == 0:
-    return controller.states.idle.new()
   return null
