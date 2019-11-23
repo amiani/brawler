@@ -10,6 +10,9 @@
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
 [ext_resource path="res://actors/misako/Misako.gd" type="Script" id=69]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.8324, 15.1328 )
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 27 )
 
@@ -52,7 +55,7 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0.133333 )
+"times": PoolRealArray( 0.107967 )
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Focus/Hitboxes/Hitbox:position")
@@ -144,9 +147,6 @@ tracks/2/keys = {
 "values": [ Vector2( 0, -350 ), Vector2( 0, -92 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.8324, 15.1328 )
-
 [sub_resource type="Animation" id=5]
 resource_name = "cross"
 length = 0.466667
@@ -194,7 +194,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0.133333 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 64.3199, -36.6458 ) ]
@@ -232,10 +232,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.133333 ),
+"times": PoolRealArray( 0.134486 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 50 ]
+"values": [ 40 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -498,20 +498,21 @@ height = 85.6245
 [node name="Misako" index="0" groups=[
 "players",
 ] instance=ExtResource( 1 )]
+position = Vector2( 300, 600 )
 script = ExtResource( 69 )
 snap = 50
 
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "backattack"
-frame = 5
+animation = "cross"
+frame = 2
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
-position = Vector2( -73.9885, -49.2193 )
+position = Vector2( 64.3199, -36.6458 )
 
 [node name="CollisionShape2D" parent="Focus/Hitboxes/Hitbox" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = false
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -532,3 +533,4 @@ stream = ExtResource( 4 )
 
 [node name="StateController" parent="." index="4"]
 script = ExtResource( 25 )
+[connection signal="area_entered" from="Focus/Hitboxes/Hitbox" to="StateController" method="handleHitboxEntered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://actors/Actor.gd" type="Script" id=1]
 [ext_resource path="res://controller/StateController.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://actors/ActorSprite.gd" type="Script" id=4]
 [ext_resource path="res://actors/ActorSFX.gd" type="Script" id=5]
 [ext_resource path="res://sounds/Super Punch MMA-SoundBible.com.wav" type="AudioStream" id=6]
+[ext_resource path="res://actors/Hurtbox.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.3126, 14.4537 )
@@ -16,8 +17,8 @@ extents = Vector2( 41.1252, 91.6566 )
 [node name="Actor" type="KinematicBody2D" groups=[
 "actors",
 ]]
-position = Vector2( 388.423, 365.04 )
 script = ExtResource( 1 )
+outsideScreenDistance = 100
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2( 0, -92 )
@@ -47,6 +48,7 @@ __meta__ = {
 "hurtboxes",
 ]]
 modulate = Color( 0.968627, 1, 0, 1 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Focus/Hurtboxes/Hurtbox"]
 shape = SubResource( 2 )

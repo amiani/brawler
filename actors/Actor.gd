@@ -16,6 +16,8 @@ var animation : AnimationPlayer
 var hitboxes : Array
 var hurtboxes : Array
 var hitbox : Area2D
+var hurtbox : Area2D
+var priority = 0
 
 func _enter_tree():
   focus = find_node('Focus')
@@ -25,7 +27,10 @@ func _enter_tree():
   hurtboxes = focus.find_node('Hurtboxes').get_children()
   hitboxes = focus.find_node('Hitboxes').get_children()
   hitbox = hitboxes[0]
+  hurtbox = hurtboxes[0]
   for h in hitboxes:
+    h.actor = self
+  for h in hurtboxes:
     h.actor = self
 
 func _ready():
@@ -57,20 +62,22 @@ func integrate(delta):
     (roomPosition.y - position.y) / delta)
   focus.position.y = -roomPosition.z - 92
   velocity.x += snap * focus.scale.x / delta
-  move_and_slide(Vector2(velocity.x, velocity.y))
+  var collision = move_and_collide(Vector2(velocity.x, velocity.y)*delta)
   velocity.x -= snap * focus.scale.x / delta
-  snap = 0
+  if collision:
+    var collider = collision.collider
+    if collider.priority < priority:
+      var snapRemainder = snap - int(abs(collision.travel.x))
+      collider.snap = -snapRemainder
+      snap = snapRemainder
+  else:
+    snap = 0
   if velocity.length() < .1:
     velocity = Vector3()
   z_index = roomPosition.y
 
 func takeDamage(damage:int):
   health -= damage
-
-func flip(flip_h:bool):
-  sprite.flip_h = flip_h
-  for c in sprite.get_children():
-    c.position *= Vector2(-1, 0) if flip_h else Vector2(1, 0)
 
 func die():
   queue_free()
