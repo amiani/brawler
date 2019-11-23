@@ -54,12 +54,7 @@ __meta__ = {
 
 [node name="Misako" parent="Room" instance=ExtResource( 4 )]
 position = Vector2( 4.12362, 185.882 )
-walkSpeed = 300
-gravity = -20
-hitPlaneTolerance = 100
-outsideScreenDistance = 0
-health = 5
-jabDamage = 1
+gravity = -30
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
