@@ -13,15 +13,10 @@ func enter(controller)->void:
 
 func update(controller, delta) -> ActorState:
   if animationFinished:
-    if findInput('attack', 'just_pressed', controller.inputs.slice(0, 9)) > -1:
-      if data.combo.has('attack'):
-        var nextAttack = controller.attacks[data.combo.attack]
-        return controller.states.attack.new(nextAttack)
+    for i in range(controller.inputs.size()-1, -1, -1):
+      for c in data.combo:
+        if c.inputMask & controller.inputs[i].mask == c.relevanceMask:
+          var nextAttack = controller.attacks[c.attack]
+          return controller.states.attack.new(nextAttack)
     return controller.states.idle.new()
   return null
-
-func findInput(action:String, stroke:String, inputBuffer:Array) -> int:
-  for i in range(0, inputBuffer.size()):
-    if inputBuffer[i][action][stroke]:
-      return i
-  return -1
