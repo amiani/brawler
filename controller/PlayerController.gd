@@ -35,7 +35,7 @@ var attacks = {
         'attack': 'kick'
       },
     ],
-    'damage': 2
+    'damage': 2,
   },
 
   'kick': {
@@ -107,8 +107,8 @@ func _physics_process(delta):
 func initCombos(attacks:Dictionary, actionMasks:Dictionary):
   for m in attacks.values():
     for c in m.combo:
-      c.inputMask = 0b000000000000000000000000
-      c.relevanceMask = 0b000000000000000000000000
+      c.inputMask = 0
+      c.relevanceMask = 0
       for action in c.input.keys():
         for stroke in c.input[action].keys():
           var actionMask = actionMasks[action][stroke]

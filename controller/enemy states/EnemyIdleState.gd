@@ -3,8 +3,9 @@ class_name EnemyIdleState
 
 func enter(controller)->void:
   controller.actor.velocity = Vector3()
+  controller.actor.animation.play('idle')
 
-var delay = .2 #seconds
+var delay = .5
 var time = 0
 func update(controller, delta)->ActorState:
   if controller.actor.health <= 0:

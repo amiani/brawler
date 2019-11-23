@@ -51,7 +51,12 @@ animations = [ {
 "frames": [ ExtResource( 36 ), ExtResource( 29 ), ExtResource( 3 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "idle",
-"speed": 6.0
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "hit",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 24 ) ],
 "loop": false,
@@ -72,11 +77,6 @@ animations = [ {
 "loop": true,
 "name": "fallingdown",
 "speed": 8.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ) ],
-"loop": false,
-"name": "hit",
-"speed": 7.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 45 ) ],
 "loop": true,
