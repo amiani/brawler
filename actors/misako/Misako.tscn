@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/misako_spriteframes.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://actors/misako/sfx/female02_attack02.ogg" type="AudioStream" id=3]
 [ext_resource path="res://actors/misako/sfx/female02_attack01.ogg" type="AudioStream" id=4]
 [ext_resource path="res://actors/misako/sfx/female02_attack03.ogg" type="AudioStream" id=5]
+[ext_resource path="res://actors/misako/sfx/female02_attacklarge.ogg" type="AudioStream" id=6]
 [ext_resource path="res://controller/PlayerController.gd" type="Script" id=25]
 [ext_resource path="res://sounds/270415__littlerobotsoundfactory__footstep-dirt-00.wav" type="AudioStream" id=67]
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
@@ -460,6 +461,63 @@ tracks/5/keys = {
 "values": [ SubResource( 9 ), SubResource( 10 ) ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "nutcracker"
+length = 0.8
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Focus/ActorSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "nutcracker" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Focus/ActorSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.733333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2, 11 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.333333 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 80 ],
+"method": "snap"
+} ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreams/Voice")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 1.1,
+"stream": ExtResource( 6 )
+} ],
+"times": PoolRealArray( 0.133333 )
+}
+
 [sub_resource type="Animation" id=14]
 resource_name = "run"
 length = 0.64
@@ -541,7 +599,7 @@ tracks/2/keys = {
 radius = 20.0
 height = 85.6245
 
-[node name="Misako" groups=[
+[node name="Misako" index="0" groups=[
 "players",
 ] instance=ExtResource( 1 )]
 position = Vector2( 300, 600 )
@@ -550,8 +608,8 @@ script = ExtResource( 69 )
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "run"
-frame = 6
+animation = "nutcracker"
+frame = 11
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
 position = Vector2( -73.9885, -49.2193 )
@@ -567,6 +625,7 @@ anims/idle = SubResource( 6 )
 anims/jab = SubResource( 7 )
 anims/jump = SubResource( 8 )
 anims/kick = SubResource( 11 )
+anims/nutcracker = SubResource( 15 )
 anims/run = SubResource( 14 )
 anims/walk = SubResource( 12 )
 
@@ -574,7 +633,7 @@ anims/walk = SubResource( 12 )
 shape = SubResource( 13 )
 
 [node name="Voice" parent="AudioStreams" index="0"]
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
 
 [node name="StateController" parent="." index="4"]
 script = ExtResource( 25 )

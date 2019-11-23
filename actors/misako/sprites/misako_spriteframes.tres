@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=148 format=2]
+[gd_resource type="SpriteFrames" load_steps=160 format=2]
 
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0007_anio.tres" type="Texture" id=1]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0000_anio.tres" type="Texture" id=2]
@@ -147,6 +147,18 @@
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0004_anio.tres" type="Texture" id=145]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0010_anio.tres" type="Texture" id=146]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0012_anio.tres" type="Texture" id=147]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0003_anio.tres" type="Texture" id=148]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0011_anio.tres" type="Texture" id=149]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0009_anio.tres" type="Texture" id=150]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0010_anio.tres" type="Texture" id=151]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0001_anio.tres" type="Texture" id=152]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0006_anio.tres" type="Texture" id=153]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0007_anio.tres" type="Texture" id=154]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0002_anio.tres" type="Texture" id=155]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0008_anio.tres" type="Texture" id=156]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0012_anio.tres" type="Texture" id=157]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0004_anio.tres" type="Texture" id=158]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/nutcracker1/RCG_Misako_nutcracker0005_anio.tres" type="Texture" id=159]
 
 [resource]
 animations = [ {
@@ -203,5 +215,10 @@ animations = [ {
 "frames": [ ExtResource( 129 ), ExtResource( 127 ), ExtResource( 125 ), ExtResource( 128 ), ExtResource( 126 ), ExtResource( 131 ), ExtResource( 130 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 116 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 111 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 112 ), ExtResource( 113 ) ],
 "loop": false,
 "name": "battlestart",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 152 ), ExtResource( 155 ), ExtResource( 148 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 153 ), ExtResource( 154 ), ExtResource( 156 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 149 ), ExtResource( 157 ) ],
+"loop": true,
+"name": "nutcracker",
 "speed": 15.0
 } ]

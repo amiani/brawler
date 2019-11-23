@@ -49,6 +49,12 @@ var attacks = {
     'animation': 'backfist',
     'combo': {},
     'damage': 2
+  },
+
+  'nutcracker': {
+    'animation': 'nutcracker',
+    'combo': {},
+    'damage': 4
   }
 }
 

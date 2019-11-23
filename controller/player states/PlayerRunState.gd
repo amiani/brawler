@@ -7,7 +7,7 @@ func enter(controller):
 func update(controller, delta) -> ActorState:
   var input = controller.inputs[0]
   if input.attack.just_pressed:
-    return controller.states.attack.new(controller.attacks.jab)
+    return controller.states.attack.new(controller.attacks.nutcracker)
   if input.jump.just_pressed:
     return controller.states.jump.new()
   var direction = Vector2()
