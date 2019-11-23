@@ -115,6 +115,11 @@ _global_script_classes=[ {
 "path": "res://controller/player states/PlayerJumpState.gd"
 }, {
 "base": "ActorState",
+"class": "PlayerRunState",
+"language": "GDScript",
+"path": "res://controller/player states/PlayerRunState.gd"
+}, {
+"base": "ActorState",
 "class": "PlayerWalkState",
 "language": "GDScript",
 "path": "res://controller/player states/PlayerWalkState.gd"
@@ -161,6 +166,7 @@ _global_script_class_icons={
 "PlayerController": "",
 "PlayerIdleState": "",
 "PlayerJumpState": "",
+"PlayerRunState": "",
 "PlayerWalkState": "",
 "Room": "",
 "Spawner": "",
