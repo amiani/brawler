@@ -15,7 +15,7 @@ func update(controller, delta) -> ActorState:
   if animationFinished:
     for i in range(controller.inputs.size()-1, -1, -1):
       for c in data.combo:
-        if c.inputMask & controller.inputs[i].mask == c.relevanceMask:
+        if c.relevanceMask & controller.inputs[i].mask == c.inputMask:
           var nextAttack = controller.attacks[c.attack]
           return controller.states.attack.new(nextAttack)
     return controller.states.idle.new()
