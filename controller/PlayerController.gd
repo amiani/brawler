@@ -6,6 +6,7 @@ var states = {
   'idle': PlayerIdleState,
   'jump': PlayerJumpState,
   'attack': PlayerAttackState,
+  'run': PlayerRunState
 }
 
 var attacks = {
@@ -73,7 +74,7 @@ func handleActorReady():
   state.enter(self)
 
 var inputs = []
-const INPUTBUFFERLENGTH = 9
+const INPUTBUFFERLENGTH = 20
 func getInput():
   var input = {}
   var mask = 0

@@ -5,6 +5,7 @@ var halfScreenSize : Vector2
 var roomPosition : Vector3
 var velocity = Vector3()
 export var walkSpeed = 300
+export var runSpeed = 500
 export var gravity = -100
 export var hitPlaneTolerance = 100
 export var outsideScreenDistance = 0
@@ -44,7 +45,10 @@ func _physics_process(delta):
   elif focus.scale.x > 0 && velocity.x < 0:
     focus.scale.x = -1
 
-export(int) var snap : int
+var snap : int
+func snap(pixels:int):
+  snap = pixels
+
 func integrate(delta):
   roomPosition.x = position.x
   roomPosition.y = position.y

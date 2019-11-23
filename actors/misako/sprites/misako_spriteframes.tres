@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=132 format=2]
+[gd_resource type="SpriteFrames" load_steps=148 format=2]
 
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0007_anio.tres" type="Texture" id=1]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/idle/RCG_Misako_idle_0000_anio.tres" type="Texture" id=2]
@@ -131,6 +131,22 @@
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/battlestart/RCG_Misako_battlestart0001_anio.tres" type="Texture" id=129]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/battlestart/RCG_Misako_battlestart0007_anio.tres" type="Texture" id=130]
 [ext_resource path="res://actors/misako/sprites/sheet.sprites/battlestart/RCG_Misako_battlestart0006_anio.tres" type="Texture" id=131]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0006_anio.tres" type="Texture" id=132]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0002_anio.tres" type="Texture" id=133]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0003_anio.tres" type="Texture" id=134]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0001_anio.tres" type="Texture" id=135]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0015_anio.tres" type="Texture" id=136]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0013_anio.tres" type="Texture" id=137]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0008_anio.tres" type="Texture" id=138]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0000_anio.tres" type="Texture" id=139]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0005_anio.tres" type="Texture" id=140]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0007_anio.tres" type="Texture" id=141]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0009_anio.tres" type="Texture" id=142]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0011_anio.tres" type="Texture" id=143]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0014_anio.tres" type="Texture" id=144]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0004_anio.tres" type="Texture" id=145]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0010_anio.tres" type="Texture" id=146]
+[ext_resource path="res://actors/misako/sprites/sheet.sprites/run/RCG_Misako_run_0012_anio.tres" type="Texture" id=147]
 
 [resource]
 animations = [ {
@@ -143,6 +159,11 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 139 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 145 ), ExtResource( 140 ), ExtResource( 132 ), ExtResource( 141 ), ExtResource( 138 ), ExtResource( 142 ), ExtResource( 146 ), ExtResource( 143 ), ExtResource( 147 ), ExtResource( 137 ), ExtResource( 144 ), ExtResource( 136 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 18 ), ExtResource( 22 ) ],
 "loop": false,

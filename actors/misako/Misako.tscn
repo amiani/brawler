@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/misako/sprites/misako_spriteframes.tres" type="SpriteFrames" id=2]
@@ -9,9 +9,6 @@
 [ext_resource path="res://sounds/270415__littlerobotsoundfactory__footstep-dirt-00.wav" type="AudioStream" id=67]
 [ext_resource path="res://sounds/270414__littlerobotsoundfactory__footstep-dirt-01.wav" type="AudioStream" id=68]
 [ext_resource path="res://actors/misako/Misako.gd" type="Script" id=69]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.8324, 15.1328 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 27 )
@@ -147,6 +144,9 @@ tracks/2/keys = {
 "values": [ Vector2( 0, -350 ), Vector2( 0, -92 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.8324, 15.1328 )
+
 [sub_resource type="Animation" id=5]
 resource_name = "cross"
 length = 0.466667
@@ -225,17 +225,19 @@ tracks/5/keys = {
 "update": 1,
 "values": [ SubResource( 1 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath(".:snap")
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.134486 ),
+"times": PoolRealArray( 0.133333 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 40 ]
+"values": [ {
+"args": [ 40 ],
+"method": "snap"
+} ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -344,6 +346,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ SubResource( 1 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.133333 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 15 ],
+"method": "snap"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 loop = true
@@ -444,6 +460,36 @@ tracks/5/keys = {
 "values": [ SubResource( 9 ), SubResource( 10 ) ]
 }
 
+[sub_resource type="Animation" id=14]
+resource_name = "run"
+length = 0.64
+loop = true
+step = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("Focus/ActorSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Focus/ActorSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 15 ]
+}
+
 [sub_resource type="Animation" id=12]
 length = 0.916667
 loop = true
@@ -500,20 +546,18 @@ height = 85.6245
 ] instance=ExtResource( 1 )]
 position = Vector2( 300, 600 )
 script = ExtResource( 69 )
-snap = 50
 
 [node name="ActorSprite" parent="Focus" index="0"]
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "cross"
-frame = 2
+animation = "run"
+frame = 6
 
 [node name="Hitbox" parent="Focus/Hitboxes" index="0"]
-position = Vector2( 64.3199, -36.6458 )
+position = Vector2( -73.9885, -49.2193 )
 
 [node name="CollisionShape2D" parent="Focus/Hitboxes/Hitbox" index="0"]
-shape = SubResource( 1 )
-disabled = false
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/backfist = SubResource( 3 )
@@ -523,6 +567,7 @@ anims/idle = SubResource( 6 )
 anims/jab = SubResource( 7 )
 anims/jump = SubResource( 8 )
 anims/kick = SubResource( 11 )
+anims/run = SubResource( 14 )
 anims/walk = SubResource( 12 )
 
 [node name="Pushbox" parent="." index="2"]
